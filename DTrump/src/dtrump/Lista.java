@@ -9,6 +9,6 @@ package dtrump;
  *
  * @author alexy
  */
-public class Pila_Materiales {
+public class Lista {
     
 }
