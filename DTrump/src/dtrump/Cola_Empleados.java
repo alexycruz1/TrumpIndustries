@@ -10,5 +10,47 @@ package dtrump;
  * @author alexy
  */
 public class Cola_Empleados {
+    int size;
+    int head;
+
+    public Cola_Empleados() {
+    }
+
+    public Cola_Empleados(int size, int head) {
+        this.size = size;
+        this.head = head;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getHead() {
+        return head;
+    }
+
+    public void setHead(int head) {
+        this.head = head;
+    }
     
+    
+    public void Queue(Object empleado, int posicion){
+        
+    }
+    
+    public void DeQueue(){
+        
+    }
+    
+    public void Peek(){
+        
+    }
+    
+    public void GetSize(){
+        
+    }
 }
