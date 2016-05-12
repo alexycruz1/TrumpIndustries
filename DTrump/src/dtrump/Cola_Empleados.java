@@ -10,47 +10,42 @@ package dtrump;
  * @author alexy
  */
 public class Cola_Empleados {
-    int size;
-    int head;
+    int size = 0;
+    node head;
+    node top;
 
     public Cola_Empleados() {
     }
 
-    public Cola_Empleados(int size, int head) {
+    public Cola_Empleados(int size, node head, node top) {
         this.size = size;
         this.head = head;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public int getHead() {
-        return head;
-    }
-
-    public void setHead(int head) {
-        this.head = head;
+        this.top = top;
     }
     
-    
-    public void Queue(Object empleado, int posicion){
-        
+    public void Queue(Object empleado){
+        if (size == 0) {
+            head.setValue(empleado);
+        }else if(size == 1){
+            head.setNext(new node(empleado, null));
+            top = head.getNext();
+        }else{
+            top.setNext(new node(empleado, null));
+            top = top.getNext();
+        }
+        size++;
     }
     
     public void DeQueue(){
-        
+        head = head.getNext();
+        size--;
     }
     
     public void Peek(){
-        
+        head.getValue();
     }
     
-    public void GetSize(){
-        
+    public int GetSize(){
+        return size;
     }
 }

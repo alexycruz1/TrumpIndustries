@@ -4,10 +4,11 @@ package dtrump;
 
 public class Lista {
     private node head = null;
+    
     public Lista() {
     }
 
-    public Lista(node head, Object size) {
+    public Lista(node head) {
         this.head = head;
     }
 
