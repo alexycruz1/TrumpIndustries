@@ -5,10 +5,7 @@
  */
 package dtrump;
 
-/**
- *
- * @author alexy
- */
+
 public class Materiales {
     String nombre;
     String descripcion;
