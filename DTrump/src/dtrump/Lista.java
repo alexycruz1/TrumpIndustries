@@ -7,7 +7,7 @@ public class Lista {
     public Lista() {
     }
 
-    public Lista(node head, Object size) {
+    public Lista(node head) {
         this.head = head;
     }
 

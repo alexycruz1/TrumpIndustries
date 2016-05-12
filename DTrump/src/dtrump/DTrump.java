@@ -5,6 +5,9 @@
  */
 package dtrump;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author alexy
@@ -69,13 +72,13 @@ public class DTrump extends javax.swing.JFrame {
         lista_empleados = new javax.swing.JComboBox<String>();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_materiales = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         nombre_material = new javax.swing.JTextField();
-        descirpcion_material = new javax.swing.JTextField();
+        descripcion_material = new javax.swing.JTextField();
         marca_material = new javax.swing.JTextField();
         serie_material = new javax.swing.JTextField();
         bt_agregar_material = new javax.swing.JButton();
@@ -326,7 +329,7 @@ public class DTrump extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Empleados", jPanel1);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_materiales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -342,7 +345,7 @@ public class DTrump extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(tabla_materiales);
 
         jLabel11.setText("Nombre");
 
@@ -391,7 +394,7 @@ public class DTrump extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(marca_material, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
                                 .addComponent(nombre_material)
-                                .addComponent(descirpcion_material))))
+                                .addComponent(descripcion_material))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addComponent(bt_agregar_material)))
@@ -411,7 +414,7 @@ public class DTrump extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(descirpcion_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(descripcion_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
@@ -495,7 +498,24 @@ public class DTrump extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_modificar_materialMouseClicked
 
     private void bt_agregar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregar_materialMouseClicked
+        String nombre,descripcion,marca;
+        int id;
+        nombre = nombre_material.getText();
+        descripcion =descripcion_material.getText();
+        marca = marca_material.getText();
+        id = Integer.parseInt(serie_material.getText());
         
+        nombre_material.setText("");
+        descripcion_material.setText("");
+        marca_material.setText("");
+        serie_material.setText("");
+        
+        catalogo.push_back(new Materiales(nombre,descripcion,marca,id));
+        DefaultTableModel a = (DefaultTableModel)tabla_materiales.getModel();
+        String[] row = {nombre,descripcion,marca,Integer.toString(id)};
+        a.addRow(row);
+        
+        JOptionPane.showMessageDialog(this, "Material Agregado");
         
         
     }//GEN-LAST:event_bt_agregar_materialMouseClicked
@@ -539,7 +559,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JButton bt_agregar_material;
     private javax.swing.JButton bt_eliminar_material;
     private javax.swing.JButton bt_modificar_material;
-    private javax.swing.JTextField descirpcion_material;
+    private javax.swing.JTextField descripcion_material;
     private javax.swing.JTextField descripcion_material_modificar;
     private javax.swing.JTextArea direccion_empleado;
     private javax.swing.JTextArea direccion_empleado_m;
@@ -578,7 +598,6 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JDialog jd_modificar_empleados;
     private javax.swing.JDialog jd_modificar_material;
     private javax.swing.JComboBox<String> lista_empleados;
@@ -592,5 +611,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JTextField salario_empleado_m;
     private javax.swing.JTextField serie_material;
     private javax.swing.JTextField serie_material_modificar;
+    private javax.swing.JTable tabla_materiales;
     // End of variables declaration//GEN-END:variables
+    Lista catalogo = new Lista(); 
 }
