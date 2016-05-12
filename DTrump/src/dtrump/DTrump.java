@@ -66,7 +66,7 @@ public class DTrump extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        lista_empleados = new javax.swing.JComboBox<>();
+        lista_empleados = new javax.swing.JComboBox<String>();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -353,6 +353,11 @@ public class DTrump extends javax.swing.JFrame {
         jLabel14.setText("Numero de Serie");
 
         bt_agregar_material.setText("Agregar");
+        bt_agregar_material.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_agregar_materialMouseClicked(evt);
+            }
+        });
 
         bt_modificar_material.setText("Modificar");
         bt_modificar_material.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -488,6 +493,12 @@ public class DTrump extends javax.swing.JFrame {
         jd_modificar_material.setLocationRelativeTo(this);
         jd_modificar_material.setVisible(true);
     }//GEN-LAST:event_bt_modificar_materialMouseClicked
+
+    private void bt_agregar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregar_materialMouseClicked
+        
+        
+        
+    }//GEN-LAST:event_bt_agregar_materialMouseClicked
 
     /**
      * @param args the command line arguments
