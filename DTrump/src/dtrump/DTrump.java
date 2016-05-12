@@ -27,6 +27,19 @@ public class DTrump extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jd_modificar_empleados = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        direccion_empleado_m = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        salario_empleado_m = new javax.swing.JTextField();
+        edad_empleado_m = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        id_empleado_m = new javax.swing.JTextField();
+        nombre_empleado_m = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -48,6 +61,83 @@ public class DTrump extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
 
+        direccion_empleado_m.setColumns(20);
+        direccion_empleado_m.setRows(5);
+        jScrollPane2.setViewportView(direccion_empleado_m);
+
+        jLabel6.setText("Direccion");
+
+        jLabel7.setText("Salario");
+
+        jLabel8.setText("Edad");
+
+        jLabel9.setText("ID");
+
+        jLabel10.setText("Nombre");
+
+        jButton4.setText("MODIFICAR");
+
+        javax.swing.GroupLayout jd_modificar_empleadosLayout = new javax.swing.GroupLayout(jd_modificar_empleados.getContentPane());
+        jd_modificar_empleados.getContentPane().setLayout(jd_modificar_empleadosLayout);
+        jd_modificar_empleadosLayout.setHorizontalGroup(
+            jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
+                        .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7))
+                        .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(id_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(edad_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(salario_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(nombre_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(48, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_modificar_empleadosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(178, 178, 178))
+        );
+        jd_modificar_empleadosLayout.setVerticalGroup(
+            jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(nombre_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(id_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(edad_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(salario_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Nombre");
@@ -67,6 +157,11 @@ public class DTrump extends javax.swing.JFrame {
         jButton1.setText("AGREGAR");
 
         jButton2.setText("MODIFICAR");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton3.setText("ELIMINAR");
 
@@ -205,6 +300,14 @@ public class DTrump extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        jd_modificar_empleados.setModal(true);
+        jd_modificar_empleados.pack();
+        jd_modificar_empleados.setLocationRelativeTo(this);
+        jd_modificar_empleados.setVisible(true);
+    }//GEN-LAST:event_jButton2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -242,24 +345,37 @@ public class DTrump extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea direccion_empleado;
+    private javax.swing.JTextArea direccion_empleado_m;
     private javax.swing.JTextField edad_empleado;
+    private javax.swing.JTextField edad_empleado_m;
     private javax.swing.JTextField id_empleado;
+    private javax.swing.JTextField id_empleado_m;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JDialog jd_modificar_empleados;
     private javax.swing.JComboBox<String> lista_empleados;
     private javax.swing.JTextField nombre_empleado;
+    private javax.swing.JTextField nombre_empleado_m;
     private javax.swing.JTextField salario_empleado;
+    private javax.swing.JTextField salario_empleado_m;
     // End of variables declaration//GEN-END:variables
 }
