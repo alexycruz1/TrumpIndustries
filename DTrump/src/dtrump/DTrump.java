@@ -40,6 +40,16 @@ public class DTrump extends javax.swing.JFrame {
         nombre_empleado_m = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jd_modificar_material = new javax.swing.JDialog();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        guardar_material = new javax.swing.JButton();
+        nombre_material_modificar = new javax.swing.JTextField();
+        descripcion_material_modificar = new javax.swing.JTextField();
+        marca_material_modificar = new javax.swing.JTextField();
+        serie_material_modificar = new javax.swing.JTextField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -56,8 +66,21 @@ public class DTrump extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        lista_empleados = new javax.swing.JComboBox<>();
+        lista_empleados = new javax.swing.JComboBox<String>();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        nombre_material = new javax.swing.JTextField();
+        descirpcion_material = new javax.swing.JTextField();
+        marca_material = new javax.swing.JTextField();
+        serie_material = new javax.swing.JTextField();
+        bt_agregar_material = new javax.swing.JButton();
+        bt_modificar_material = new javax.swing.JButton();
+        bt_eliminar_material = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
 
@@ -136,6 +159,68 @@ public class DTrump extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(62, Short.MAX_VALUE))
+        );
+
+        jLabel15.setText("Nombre");
+
+        jLabel16.setText("Descripcion");
+
+        jLabel17.setText("Marca");
+
+        jLabel18.setText("Numero de Serie");
+
+        guardar_material.setText("Guardar");
+
+        javax.swing.GroupLayout jd_modificar_materialLayout = new javax.swing.GroupLayout(jd_modificar_material.getContentPane());
+        jd_modificar_material.getContentPane().setLayout(jd_modificar_materialLayout);
+        jd_modificar_materialLayout.setHorizontalGroup(
+            jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificar_materialLayout.createSequentialGroup()
+                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_modificar_materialLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jd_modificar_materialLayout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(18, 18, 18)
+                                .addComponent(serie_material_modificar))
+                            .addGroup(jd_modificar_materialLayout.createSequentialGroup()
+                                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel17))
+                                .addGap(44, 44, 44)
+                                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(nombre_material_modificar)
+                                    .addComponent(descripcion_material_modificar, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                                    .addComponent(marca_material_modificar)))))
+                    .addGroup(jd_modificar_materialLayout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(guardar_material)))
+                .addContainerGap(112, Short.MAX_VALUE))
+        );
+        jd_modificar_materialLayout.setVerticalGroup(
+            jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificar_materialLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(nombre_material_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(descripcion_material_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(marca_material_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(serie_material_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(guardar_material)
+                .addGap(32, 32, 32))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -227,7 +312,7 @@ public class DTrump extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -241,15 +326,106 @@ public class DTrump extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Empleados", jPanel1);
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Descripcion", "Marca", "Numero de Serie"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jTable1);
+
+        jLabel11.setText("Nombre");
+
+        jLabel12.setText("Descripcion");
+
+        jLabel13.setText("Marca");
+
+        jLabel14.setText("Numero de Serie");
+
+        bt_agregar_material.setText("Agregar");
+
+        bt_modificar_material.setText("Modificar");
+        bt_modificar_material.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_modificar_materialMouseClicked(evt);
+            }
+        });
+
+        bt_eliminar_material.setText("Eliminar");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 538, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(bt_modificar_material)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_eliminar_material))
+                    .addComponent(jLabel13)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel14)
+                            .addGap(18, 18, 18)
+                            .addComponent(serie_material, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel11)
+                                .addComponent(jLabel12))
+                            .addGap(42, 42, 42)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(marca_material, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                                .addComponent(nombre_material)
+                                .addComponent(descirpcion_material))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(bt_agregar_material)))
+                .addGap(209, 209, 209))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(nombre_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(descirpcion_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(marca_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(serie_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(bt_agregar_material)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_modificar_material)
+                    .addComponent(bt_eliminar_material))
+                .addGap(31, 31, 31))
         );
 
         jTabbedPane1.addTab("Materiales", jPanel2);
@@ -262,7 +438,7 @@ public class DTrump extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
+            .addGap(0, 438, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Productos", jPanel3);
@@ -275,7 +451,7 @@ public class DTrump extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
+            .addGap(0, 438, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Ordenes", jPanel4);
@@ -307,6 +483,13 @@ public class DTrump extends javax.swing.JFrame {
         jd_modificar_empleados.setLocationRelativeTo(this);
         jd_modificar_empleados.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void bt_modificar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_modificar_materialMouseClicked
+        jd_modificar_material.pack();
+        jd_modificar_material.setModal(true);
+        jd_modificar_material.setLocationRelativeTo(this);
+        jd_modificar_material.setVisible(true);
+    }//GEN-LAST:event_bt_modificar_materialMouseClicked
 
     /**
      * @param args the command line arguments
@@ -344,10 +527,16 @@ public class DTrump extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_agregar_material;
+    private javax.swing.JButton bt_eliminar_material;
+    private javax.swing.JButton bt_modificar_material;
+    private javax.swing.JTextField descirpcion_material;
+    private javax.swing.JTextField descripcion_material_modificar;
     private javax.swing.JTextArea direccion_empleado;
     private javax.swing.JTextArea direccion_empleado_m;
     private javax.swing.JTextField edad_empleado;
     private javax.swing.JTextField edad_empleado_m;
+    private javax.swing.JButton guardar_material;
     private javax.swing.JTextField id_empleado;
     private javax.swing.JTextField id_empleado_m;
     private javax.swing.JButton jButton1;
@@ -356,6 +545,14 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -370,12 +567,21 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JDialog jd_modificar_empleados;
+    private javax.swing.JDialog jd_modificar_material;
     private javax.swing.JComboBox<String> lista_empleados;
+    private javax.swing.JTextField marca_material;
+    private javax.swing.JTextField marca_material_modificar;
     private javax.swing.JTextField nombre_empleado;
     private javax.swing.JTextField nombre_empleado_m;
+    private javax.swing.JTextField nombre_material;
+    private javax.swing.JTextField nombre_material_modificar;
     private javax.swing.JTextField salario_empleado;
     private javax.swing.JTextField salario_empleado_m;
+    private javax.swing.JTextField serie_material;
+    private javax.swing.JTextField serie_material_modificar;
     // End of variables declaration//GEN-END:variables
 }
