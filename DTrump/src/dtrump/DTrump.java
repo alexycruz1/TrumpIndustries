@@ -69,7 +69,7 @@ public class DTrump extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        lista_empleados = new javax.swing.JComboBox<String>();
+        lista_empleados = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tabla_materiales = new javax.swing.JTable();
@@ -243,6 +243,11 @@ public class DTrump extends javax.swing.JFrame {
         jScrollPane1.setViewportView(direccion_empleado);
 
         jButton1.setText("AGREGAR");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setText("MODIFICAR");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -520,6 +525,29 @@ public class DTrump extends javax.swing.JFrame {
         
     }//GEN-LAST:event_bt_agregar_materialMouseClicked
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        String Nombre, Direccion;
+        int ID, Edad, Salario;
+        
+        Nombre = nombre_empleado.getText();
+        Direccion = direccion_empleado.getText();
+        ID = Integer.parseInt(id_empleado.getText());
+        Edad = Integer.parseInt(edad_empleado.getText());
+        Salario = Integer.parseInt(salario_empleado.getText());
+        
+        empleados.Queue(new Empleados(Nombre, ID, Edad, Direccion, Salario));
+        lista_empleados.addItem(new Empleados(Nombre, ID, Edad, Direccion, Salario));
+        JOptionPane.showMessageDialog(this, "Ha agregado un empleado", 
+                "AGREGAR EMPLEADOS", JOptionPane.INFORMATION_MESSAGE);
+        
+        nombre_empleado.setText("");
+        direccion_empleado.setText("");
+        id_empleado.setText("");
+        edad_empleado.setText("");
+        salario_empleado.setText("");
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -600,7 +628,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JDialog jd_modificar_empleados;
     private javax.swing.JDialog jd_modificar_material;
-    private javax.swing.JComboBox<String> lista_empleados;
+    private javax.swing.JComboBox<Object> lista_empleados;
     private javax.swing.JTextField marca_material;
     private javax.swing.JTextField marca_material_modificar;
     private javax.swing.JTextField nombre_empleado;
@@ -614,4 +642,5 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JTable tabla_materiales;
     // End of variables declaration//GEN-END:variables
     Lista catalogo = new Lista(); 
+    Cola_Empleados empleados = new Cola_Empleados();
 }

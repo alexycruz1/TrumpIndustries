@@ -11,8 +11,8 @@ package dtrump;
  */
 public class Cola_Empleados {
     int size = 0;
-    node head;
-    node top;
+    node head = null;
+    node top = null;
 
     public Cola_Empleados() {
     }
@@ -23,17 +23,18 @@ public class Cola_Empleados {
         this.top = top;
     }
     
-    public void Queue(Object empleado){
-        if (size == 0) {
-            head.setValue(empleado);
-        }else if(size == 1){
+    public void Queue(Empleados empleado){
+        size++;
+        node nuevo_empleado = new node(empleado, null);
+        if (size == 1) {
+            head = nuevo_empleado;
+        }else if(size == 2){
             head.setNext(new node(empleado, null));
             top = head.getNext();
         }else{
             top.setNext(new node(empleado, null));
             top = top.getNext();
         }
-        size++;
     }
     
     public void DeQueue(){
