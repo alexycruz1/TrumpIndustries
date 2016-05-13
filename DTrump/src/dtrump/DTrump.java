@@ -369,6 +369,11 @@ public class DTrump extends javax.swing.JFrame {
         jLabel14.setText("Numero de Serie");
 
         bt_agregar_material.setText("Agregar");
+        bt_agregar_material.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                bt_agregar_materialMouseMoved(evt);
+            }
+        });
         bt_agregar_material.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_agregar_materialMouseClicked(evt);
@@ -511,25 +516,36 @@ public class DTrump extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_modificar_materialMouseClicked
 
     private void bt_agregar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregar_materialMouseClicked
-        String nombre, descripcion, marca;
-        int id;
-        nombre = nombre_material.getText();
-        descripcion = descripcion_material.getText();
-        marca = marca_material.getText();
-        id = Integer.parseInt(serie_material.getText());
 
-        nombre_material.setText("");
-        descripcion_material.setText("");
-        marca_material.setText("");
-        serie_material.setText("");
+        if (bt_agregar_material.isEnabled()) {
+            String nombre, descripcion, marca;
+            int id;
+            nombre = nombre_material.getText();
+            descripcion = descripcion_material.getText();
+            marca = marca_material.getText();
+            id = Integer.parseInt(serie_material.getText());
 
-        catalogo.push_back(new Materiales(nombre, descripcion, marca, id));
-        DefaultTableModel a = (DefaultTableModel) tabla_materiales.getModel();
-        String[] row = {nombre, descripcion, marca, Integer.toString(id)};
-        a.addRow(row);
+            nombre_material.setText("");
+            descripcion_material.setText("");
+            marca_material.setText("");
+            serie_material.setText("");
+            boolean repetido = false;
+            for (int i = 0; i < catalogo.size(); i++) {
+                if ((((Materiales) catalogo.at(i)).nombre).equals(nombre) && (((Materiales) catalogo.at(i)).marca).equals(marca) ) {
+                    repetido = true;
+                }
+            }
+            if (!repetido) {
+                catalogo.push_back(new Materiales(nombre, descripcion, marca, id));
+                DefaultTableModel a = (DefaultTableModel) tabla_materiales.getModel();
+                String[] row = {nombre, descripcion, marca, Integer.toString(id)};
+                a.addRow(row);
 
-        JOptionPane.showMessageDialog(this, "Material Agregado");
-
+                JOptionPane.showMessageDialog(this, "Material Agregado");
+            }else{
+                JOptionPane.showMessageDialog(this, "Ese material ya se encuentra en el catalogo");
+            }
+        }
 
     }//GEN-LAST:event_bt_agregar_materialMouseClicked
 
@@ -560,6 +576,7 @@ public class DTrump extends javax.swing.JFrame {
 
     private void jButton1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseMoved
         // TODO add your handling code here:
+
         if ((nombre_empleado.getText()).equals("") || (id_empleado.getText()).equals("")
                 || (edad_empleado.getText()).equals("") || (salario_empleado.getText()).equals("")
                 || (direccion_empleado.getText()).equals("")) {
@@ -569,6 +586,16 @@ public class DTrump extends javax.swing.JFrame {
             jButton1.setEnabled(true);
         }
     }//GEN-LAST:event_jButton1MouseMoved
+
+    private void bt_agregar_materialMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregar_materialMouseMoved
+        if ((nombre_material.getText()).equals("") || (descripcion_material.getText()).equals("")
+                || (serie_material.getText()).equals("") || (marca_material.getText()).equals("")) {
+
+            bt_agregar_material.setEnabled(false);
+        } else {
+            bt_agregar_material.setEnabled(true);
+        }
+    }//GEN-LAST:event_bt_agregar_materialMouseMoved
 
     /**
      * @param args the command line arguments

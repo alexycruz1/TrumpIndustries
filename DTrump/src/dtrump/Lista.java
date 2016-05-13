@@ -104,7 +104,7 @@ public class Lista {
             }
             return cont;
         } else {
-            return 1;
+            return 0;
         }
     }
 
