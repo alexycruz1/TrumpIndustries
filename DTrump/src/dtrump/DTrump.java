@@ -227,6 +227,11 @@ public class DTrump extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("TRUMP TOWER ©");
+
+        jTabbedPane1.setToolTipText("");
+
+        jPanel1.setToolTipText("");
 
         jLabel1.setText("Nombre");
 
@@ -243,6 +248,12 @@ public class DTrump extends javax.swing.JFrame {
         jScrollPane1.setViewportView(direccion_empleado);
 
         jButton1.setText("AGREGAR");
+        jButton1.setToolTipText("Da click para agregar un empleado");
+        jButton1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jButton1MouseMoved(evt);
+            }
+        });
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -266,25 +277,18 @@ public class DTrump extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel5))
+                        .addGap(21, 21, 21)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(salario_empleado, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                                    .addComponent(edad_empleado)
-                                    .addComponent(id_empleado)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(nombre_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(nombre_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(edad_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(salario_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(id_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -294,8 +298,12 @@ public class DTrump extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jButton3))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,32 +312,32 @@ public class DTrump extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(nombre_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(id_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(edad_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(salario_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(salario_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(46, 46, 46)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton2)
                             .addComponent(jButton3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lista_empleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43))
+                        .addComponent(lista_empleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Empleados", jPanel1);
@@ -449,7 +457,7 @@ public class DTrump extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 438, Short.MAX_VALUE)
+            .addGap(0, 478, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Productos", jPanel3);
@@ -462,7 +470,7 @@ public class DTrump extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 438, Short.MAX_VALUE)
+            .addGap(0, 478, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Ordenes", jPanel4);
@@ -503,50 +511,64 @@ public class DTrump extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_modificar_materialMouseClicked
 
     private void bt_agregar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregar_materialMouseClicked
-        String nombre,descripcion,marca;
+        String nombre, descripcion, marca;
         int id;
         nombre = nombre_material.getText();
-        descripcion =descripcion_material.getText();
+        descripcion = descripcion_material.getText();
         marca = marca_material.getText();
         id = Integer.parseInt(serie_material.getText());
-        
+
         nombre_material.setText("");
         descripcion_material.setText("");
         marca_material.setText("");
         serie_material.setText("");
-        
-        catalogo.push_back(new Materiales(nombre,descripcion,marca,id));
-        DefaultTableModel a = (DefaultTableModel)tabla_materiales.getModel();
-        String[] row = {nombre,descripcion,marca,Integer.toString(id)};
+
+        catalogo.push_back(new Materiales(nombre, descripcion, marca, id));
+        DefaultTableModel a = (DefaultTableModel) tabla_materiales.getModel();
+        String[] row = {nombre, descripcion, marca, Integer.toString(id)};
         a.addRow(row);
-        
+
         JOptionPane.showMessageDialog(this, "Material Agregado");
-        
-        
+
+
     }//GEN-LAST:event_bt_agregar_materialMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        String Nombre, Direccion;
-        int ID, Edad, Salario;
-        
-        Nombre = nombre_empleado.getText();
-        Direccion = direccion_empleado.getText();
-        ID = Integer.parseInt(id_empleado.getText());
-        Edad = Integer.parseInt(edad_empleado.getText());
-        Salario = Integer.parseInt(salario_empleado.getText());
-        
-        empleados.Queue(new Empleados(Nombre, ID, Edad, Direccion, Salario));
-        lista_empleados.addItem(new Empleados(Nombre, ID, Edad, Direccion, Salario));
-        JOptionPane.showMessageDialog(this, "Ha agregado un empleado", 
-                "AGREGAR EMPLEADOS", JOptionPane.INFORMATION_MESSAGE);
-        
-        nombre_empleado.setText("");
-        direccion_empleado.setText("");
-        id_empleado.setText("");
-        edad_empleado.setText("");
-        salario_empleado.setText("");
+        if (jButton1.isEnabled()) {
+            String Nombre, Direccion;
+            int ID, Edad, Salario;
+
+            Nombre = nombre_empleado.getText();
+            Direccion = direccion_empleado.getText();
+            ID = Integer.parseInt(id_empleado.getText());
+            Edad = Integer.parseInt(edad_empleado.getText());
+            Salario = Integer.parseInt(salario_empleado.getText());
+
+            empleados.Queue(new Empleados(Nombre, ID, Edad, Direccion, Salario));
+            lista_empleados.addItem(new Empleados(Nombre, ID, Edad, Direccion, Salario));
+            JOptionPane.showMessageDialog(this, "Ha agregado un empleado",
+                    "AGREGAR EMPLEADOS", JOptionPane.INFORMATION_MESSAGE);
+
+            nombre_empleado.setText("");
+            direccion_empleado.setText("");
+            id_empleado.setText("");
+            edad_empleado.setText("");
+            salario_empleado.setText("");
+        }
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseMoved
+        // TODO add your handling code here:
+        if ((nombre_empleado.getText()).equals("") || (id_empleado.getText()).equals("")
+                || (edad_empleado.getText()).equals("") || (salario_empleado.getText()).equals("")
+                || (direccion_empleado.getText()).equals("")) {
+
+            jButton1.setEnabled(false);
+        } else {
+            jButton1.setEnabled(true);
+        }
+    }//GEN-LAST:event_jButton1MouseMoved
 
     /**
      * @param args the command line arguments
@@ -641,6 +663,6 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JTextField serie_material_modificar;
     private javax.swing.JTable tabla_materiales;
     // End of variables declaration//GEN-END:variables
-    Lista catalogo = new Lista(); 
+    Lista catalogo = new Lista();
     Cola_Empleados empleados = new Cola_Empleados();
 }
