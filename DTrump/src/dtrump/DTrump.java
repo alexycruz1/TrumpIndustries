@@ -47,6 +47,7 @@ public class DTrump extends javax.swing.JFrame {
         nombre_empleado_m = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
         jd_modificar_material = new javax.swing.JDialog();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -57,6 +58,7 @@ public class DTrump extends javax.swing.JFrame {
         descripcion_material_modificar = new javax.swing.JTextField();
         marca_material_modificar = new javax.swing.JTextField();
         serie_material_modificar = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -98,22 +100,45 @@ public class DTrump extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
 
         jd_modificar_empleados.setTitle("MODIFICAR EMPLEADOS");
+        jd_modificar_empleados.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         direccion_empleado_m.setColumns(20);
         direccion_empleado_m.setRows(5);
         jScrollPane2.setViewportView(direccion_empleado_m);
 
+        jd_modificar_empleados.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 216, 404, -1));
+
+        jLabel6.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(254, 254, 254));
         jLabel6.setText("Direccion");
+        jd_modificar_empleados.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 216, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(254, 254, 254));
         jLabel7.setText("Salario");
+        jd_modificar_empleados.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 176, -1, -1));
+        jd_modificar_empleados.getContentPane().add(salario_empleado_m, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 171, 110, -1));
+        jd_modificar_empleados.getContentPane().add(edad_empleado_m, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 131, 57, -1));
 
+        jLabel8.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
         jLabel8.setText("Edad");
+        jd_modificar_empleados.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 136, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(254, 254, 254));
         jLabel9.setText("ID");
+        jd_modificar_empleados.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 91, -1, -1));
+        jd_modificar_empleados.getContentPane().add(id_empleado_m, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 86, 145, -1));
+        jd_modificar_empleados.getContentPane().add(nombre_empleado_m, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 36, 322, -1));
 
+        jLabel10.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(254, 254, 254));
         jLabel10.setText("Nombre");
+        jd_modificar_empleados.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 41, -1, -1));
 
-        jButton4.setText("MODIFICAR");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/edit.png"))); // NOI18N
+        jButton4.setText("Modificar");
         jButton4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jButton4MouseMoved(evt);
@@ -124,77 +149,35 @@ public class DTrump extends javax.swing.JFrame {
                 jButton4MouseClicked(evt);
             }
         });
+        jd_modificar_empleados.getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 130, 40));
 
-        javax.swing.GroupLayout jd_modificar_empleadosLayout = new javax.swing.GroupLayout(jd_modificar_empleados.getContentPane());
-        jd_modificar_empleados.getContentPane().setLayout(jd_modificar_empleadosLayout);
-        jd_modificar_empleadosLayout.setHorizontalGroup(
-            jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
-                        .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7))
-                        .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(id_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(edad_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(salario_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(nombre_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(48, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_modificar_empleadosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(178, 178, 178))
-        );
-        jd_modificar_empleadosLayout.setVerticalGroup(
-            jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_modificar_empleadosLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(nombre_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(id_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(edad_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(salario_empleado_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jd_modificar_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
-        );
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
+        jd_modificar_empleados.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 460));
 
+        jd_modificar_material.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(254, 254, 254));
         jLabel15.setText("Nombre");
+        jd_modificar_material.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
 
+        jLabel16.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(254, 254, 254));
         jLabel16.setText("Descripcion");
+        jd_modificar_material.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
 
+        jLabel17.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(254, 254, 254));
         jLabel17.setText("Marca");
+        jd_modificar_material.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, -1));
 
+        jLabel18.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(254, 254, 254));
         jLabel18.setText("Numero de Serie");
+        jd_modificar_material.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
 
-        guardar_material.setText("Guardar");
+        guardar_material.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/edit.png"))); // NOI18N
+        guardar_material.setText("Modificar");
         guardar_material.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 guardar_materialMouseMoved(evt);
@@ -205,58 +188,14 @@ public class DTrump extends javax.swing.JFrame {
                 guardar_materialMouseClicked(evt);
             }
         });
+        jd_modificar_material.getContentPane().add(guardar_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, -1, -1));
+        jd_modificar_material.getContentPane().add(nombre_material_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 162, -1));
+        jd_modificar_material.getContentPane().add(descripcion_material_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 162, -1));
+        jd_modificar_material.getContentPane().add(marca_material_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 162, -1));
+        jd_modificar_material.getContentPane().add(serie_material_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 154, -1));
 
-        javax.swing.GroupLayout jd_modificar_materialLayout = new javax.swing.GroupLayout(jd_modificar_material.getContentPane());
-        jd_modificar_material.getContentPane().setLayout(jd_modificar_materialLayout);
-        jd_modificar_materialLayout.setHorizontalGroup(
-            jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_modificar_materialLayout.createSequentialGroup()
-                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_modificar_materialLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jd_modificar_materialLayout.createSequentialGroup()
-                                .addComponent(jLabel18)
-                                .addGap(18, 18, 18)
-                                .addComponent(serie_material_modificar))
-                            .addGroup(jd_modificar_materialLayout.createSequentialGroup()
-                                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel17))
-                                .addGap(44, 44, 44)
-                                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(nombre_material_modificar)
-                                    .addComponent(descripcion_material_modificar, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                                    .addComponent(marca_material_modificar)))))
-                    .addGroup(jd_modificar_materialLayout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(guardar_material)))
-                .addContainerGap(112, Short.MAX_VALUE))
-        );
-        jd_modificar_materialLayout.setVerticalGroup(
-            jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_modificar_materialLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(nombre_material_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(descripcion_material_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(marca_material_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(jd_modificar_materialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(serie_material_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(guardar_material)
-                .addGap(32, 32, 32))
-        );
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
+        jd_modificar_material.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 400));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TRUMP TOWER ©");
@@ -301,7 +240,7 @@ public class DTrump extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 216, 404, -1));
 
-        jButton1.setText("AGREGAR");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/ThumbnailAction.do.png"))); // NOI18N
         jButton1.setToolTipText("Da click para agregar un empleado");
         jButton1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -313,9 +252,10 @@ public class DTrump extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 349, 139, 64));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 60, 60));
 
-        jButton2.setText("MODIFICAR");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/edit.png"))); // NOI18N
+        jButton2.setText("Modificar");
         jButton2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jButton2MouseMoved(evt);
@@ -326,9 +266,10 @@ public class DTrump extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 351, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
 
-        jButton3.setText("ELIMINAR");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/icon_delete.png"))); // NOI18N
+        jButton3.setText("Eliminar");
         jButton3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jButton3MouseMoved(evt);
@@ -339,9 +280,9 @@ public class DTrump extends javax.swing.JFrame {
                 jButton3MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 351, -1, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, -1, -1));
 
-        jPanel1.add(lista_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 386, 261, -1));
+        jPanel1.add(lista_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 261, -1));
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 460));
@@ -394,7 +335,7 @@ public class DTrump extends javax.swing.JFrame {
         jPanel2.add(marca_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 119, 181, -1));
         jPanel2.add(serie_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 166, 181, -1));
 
-        bt_agregar_material.setText("Agregar");
+        bt_agregar_material.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/ThumbnailAction.do.png"))); // NOI18N
         bt_agregar_material.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 bt_agregar_materialMouseMoved(evt);
@@ -405,23 +346,25 @@ public class DTrump extends javax.swing.JFrame {
                 bt_agregar_materialMouseClicked(evt);
             }
         });
-        jPanel2.add(bt_agregar_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 211, -1, -1));
+        jPanel2.add(bt_agregar_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 60, 60));
 
+        bt_modificar_material.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/edit.png"))); // NOI18N
         bt_modificar_material.setText("Modificar");
         bt_modificar_material.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_modificar_materialMouseClicked(evt);
             }
         });
-        jPanel2.add(bt_modificar_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 424, -1, -1));
+        jPanel2.add(bt_modificar_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, -1));
 
+        bt_eliminar_material.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/icon_delete.png"))); // NOI18N
         bt_eliminar_material.setText("Eliminar");
         bt_eliminar_material.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_eliminar_materialMouseClicked(evt);
             }
         });
-        jPanel2.add(bt_eliminar_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 424, -1, -1));
+        jPanel2.add(bt_eliminar_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(254, 254, 254));
@@ -596,7 +539,7 @@ public class DTrump extends javax.swing.JFrame {
                 empleados.Queue(nuevo_empleado);
                 lista_empleados.addItem(nuevo_empleado);
                 lista_empleados_temp.push_back(nuevo_empleado);
-                
+
                 JOptionPane.showMessageDialog(this, "Ha agregado un empleado",
                         "AGREGAR EMPLEADOS", JOptionPane.INFORMATION_MESSAGE);
 
@@ -695,21 +638,21 @@ public class DTrump extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-        lista_empleados_temp.erase(lista_empleados.getSelectedIndex());
-        lista_empleados.removeAllItems();
+        if (jButton3.isEnabled()) {
+            lista_empleados_temp.erase(lista_empleados.getSelectedIndex());
+            lista_empleados.removeAllItems();
 
-        while (empleados.GetSize() != 0) {
-            empleados.DeQueue();
+            while (empleados.GetSize() != 0) {
+                empleados.DeQueue();
+            }
+
+            for (int i = 0; i < lista_empleados_temp.size(); i++) {
+                lista_empleados.addItem(lista_empleados_temp.at(i));
+            }
+            for (int i = 0; i < lista_empleados_temp.size(); i++) {
+                empleados.Queue((Empleados) lista_empleados_temp.at(i));
+            }
         }
-
-        for (int i = 0; i < lista_empleados_temp.size(); i++) {
-            lista_empleados.addItem(lista_empleados_temp.at(i));
-        }
-        for (int i = 0; i < lista_empleados_temp.size(); i++) {
-            empleados.Queue((Empleados) lista_empleados_temp.at(i));
-        }
-
-
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void bt_eliminar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_eliminar_materialMouseClicked
@@ -719,7 +662,7 @@ public class DTrump extends javax.swing.JFrame {
             catalogo.erase(tabla_materiales.getSelectedRow());
             inventario.erase(tabla_materiales.getSelectedRow());
             for (int i = 0; i < catalogo.size(); i++) {
-                System.out.println(((Materiales)catalogo.at(i)).getNombre());
+                System.out.println(((Materiales) catalogo.at(i)).getNombre());
             }
             tabla_materiales.setModel(m);
             System.out.println(catalogo.size());
@@ -728,26 +671,26 @@ public class DTrump extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_eliminar_materialMouseClicked
 
     private void guardar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardar_materialMouseClicked
-        String nombre,descripcion,marca;
-        int serie,posicion;
+        String nombre, descripcion, marca;
+        int serie, posicion;
         posicion = tabla_materiales.getSelectedRow();
-        nombre =nombre_material_modificar.getText();
+        nombre = nombre_material_modificar.getText();
         descripcion = descripcion_material_modificar.getText();
         marca = marca_material_modificar.getText();
-        serie=Integer.parseInt(serie_material_modificar.getText());
-        ((Materiales)catalogo.at(posicion)).setNombre(nombre);
-        ((Materiales)catalogo.at(posicion)).setMarca(marca);
-        ((Materiales)catalogo.at(posicion)).setID(serie);
-        ((Materiales)catalogo.at(posicion)).setDescripcion(descripcion);
-        ((Pila)(inventario.at(posicion))).modificar(nombre, descripcion, marca, serie);
-        DefaultTableModel m = (DefaultTableModel)tabla_materiales.getModel();
-        
+        serie = Integer.parseInt(serie_material_modificar.getText());
+        ((Materiales) catalogo.at(posicion)).setNombre(nombre);
+        ((Materiales) catalogo.at(posicion)).setMarca(marca);
+        ((Materiales) catalogo.at(posicion)).setID(serie);
+        ((Materiales) catalogo.at(posicion)).setDescripcion(descripcion);
+        ((Pila) (inventario.at(posicion))).modificar(nombre, descripcion, marca, serie);
+        DefaultTableModel m = (DefaultTableModel) tabla_materiales.getModel();
+
         for (int i = 0; i < catalogo.size(); i++) {
             m.removeRow(0);
         }
         for (int i = 0; i < catalogo.size(); i++) {
-            String[] row = {((Materiales)catalogo.at(i)).getNombre(),((Materiales)catalogo.at(i)).getDescripcion(),
-            ((Materiales)catalogo.at(i)).getMarca(),Integer.toString(((Materiales)catalogo.at(i)).getID())};
+            String[] row = {((Materiales) catalogo.at(i)).getNombre(), ((Materiales) catalogo.at(i)).getDescripcion(),
+                ((Materiales) catalogo.at(i)).getMarca(), Integer.toString(((Materiales) catalogo.at(i)).getID())};
             m.addRow(row);
         }
         jd_modificar_material.setVisible(false);
@@ -832,8 +775,10 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

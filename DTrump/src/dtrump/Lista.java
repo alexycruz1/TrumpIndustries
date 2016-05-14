@@ -55,7 +55,6 @@ public class Lista {
         if (posicion ==-1) {
             posicion++;
         }
-        System.out.println(posicion);
         if (posicion != 0) {
             for (int i = 1; i < posicion; i++) {
                 temp = temp.getNext();
@@ -67,7 +66,6 @@ public class Lista {
                 head = null;
             }
         }else{
-            System.out.println("hola");
             node nuevo_head=head.getNext();
             head = nuevo_head;
         }
