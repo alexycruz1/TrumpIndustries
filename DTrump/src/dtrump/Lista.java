@@ -52,12 +52,16 @@ public class Lista {
     }
 
     public void erase(int posicion) {
-        node temp = head;
-        for (int i = 0; i < posicion; i++) {
-            temp = temp.getNext();
+       node temp = head;
+        for (int i = 1; i < posicion; i++) {
+                temp = temp.getNext();
         }
-        node eliminado = temp.getNext();
-        temp.setNext(eliminado.getNext());
+        if (temp.hasNext()) {
+            node eliminado = temp.getNext();
+            temp.setNext(eliminado.getNext());
+        }else{
+            head=null;
+        }
     }
 
     public void concat(Lista lista) {

@@ -1,14 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dtrump;
 
-/**
- *
- * @author alexy
- */
+
 public class Pila {
+    private Lista arreglo = new Lista();
+
+    public Pila() {
+    }
     
+    public void push(Materiales value){
+        arreglo.push_back(value);
+    }
+    public boolean isEmpty(){
+        if (arreglo.size()==0){
+            return true;
+        }
+        return false;
+    }
+    public int getSize(){
+        return arreglo.size();
+    }
+    public Materiales peek(){
+        return (Materiales)(arreglo.at(arreglo.size()-1));
+    }
+    public void pop(){
+        arreglo.erase(arreglo.size()-1);
+    }
 }
