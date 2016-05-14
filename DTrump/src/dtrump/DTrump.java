@@ -19,6 +19,10 @@ public class DTrump extends javax.swing.JFrame {
      */
     public DTrump() {
         initComponents();
+
+        HiloHora hora = new HiloHora(jl_hora);
+        Thread proceso = new Thread(hora);
+        proceso.start();
     }
 
     /**
@@ -86,6 +90,11 @@ public class DTrump extends javax.swing.JFrame {
         bt_eliminar_material = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jl_hora = new javax.swing.JLabel();
+        titulo_cronometro = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+
+        jd_modificar_empleados.setTitle("MODIFICAR EMPLEADOS");
 
         direccion_empleado_m.setColumns(20);
         direccion_empleado_m.setRows(5);
@@ -102,6 +111,16 @@ public class DTrump extends javax.swing.JFrame {
         jLabel10.setText("Nombre");
 
         jButton4.setText("MODIFICAR");
+        jButton4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jButton4MouseMoved(evt);
+            }
+        });
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_modificar_empleadosLayout = new javax.swing.GroupLayout(jd_modificar_empleados.getContentPane());
         jd_modificar_empleados.getContentPane().setLayout(jd_modificar_empleadosLayout);
@@ -261,6 +280,11 @@ public class DTrump extends javax.swing.JFrame {
         });
 
         jButton2.setText("MODIFICAR");
+        jButton2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jButton2MouseMoved(evt);
+            }
+        });
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -268,6 +292,16 @@ public class DTrump extends javax.swing.JFrame {
         });
 
         jButton3.setText("ELIMINAR");
+        jButton3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jButton3MouseMoved(evt);
+            }
+        });
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -285,10 +319,12 @@ public class DTrump extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nombre_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(edad_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(salario_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(id_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(edad_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(salario_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(id_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(36, 36, 36))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -303,7 +339,7 @@ public class DTrump extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,7 +373,7 @@ public class DTrump extends javax.swing.JFrame {
                             .addComponent(jButton3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lista_empleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Empleados", jPanel1);
@@ -396,10 +432,6 @@ public class DTrump extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(bt_modificar_material)
-                        .addGap(18, 18, 18)
-                        .addComponent(bt_eliminar_material))
                     .addComponent(jLabel13)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,7 +440,7 @@ public class DTrump extends javax.swing.JFrame {
                             .addComponent(jLabel14))
                         .addGap(8, 8, 8)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(serie_material, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                            .addComponent(serie_material, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(marca_material, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
                                 .addComponent(nombre_material)
@@ -418,9 +450,15 @@ public class DTrump extends javax.swing.JFrame {
                         .addComponent(bt_agregar_material)))
                 .addGap(218, 218, 218))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap(44, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bt_modificar_material)
+                .addGap(18, 18, 18)
+                .addComponent(bt_eliminar_material)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,11 +483,11 @@ public class DTrump extends javax.swing.JFrame {
                 .addComponent(bt_agregar_material)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_modificar_material)
                     .addComponent(bt_eliminar_material))
-                .addGap(31, 31, 31))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Materiales", jPanel2);
@@ -458,27 +496,53 @@ public class DTrump extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 538, Short.MAX_VALUE)
+            .addGap(0, 541, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 478, Short.MAX_VALUE)
+            .addGap(0, 456, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Productos", jPanel3);
+
+        jl_hora.setFont(new java.awt.Font("Palatino Linotype", 1, 24)); // NOI18N
+        jl_hora.setForeground(new java.awt.Color(214, 27, 58));
+        jl_hora.setText("0");
+
+        titulo_cronometro.setFont(new java.awt.Font("Palatino Linotype", 1, 24)); // NOI18N
+        titulo_cronometro.setText("Tiempo total de operacion:");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 538, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(titulo_cronometro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(176, 176, 176))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(jl_hora)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 478, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(titulo_cronometro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jl_hora)
+                .addContainerGap(371, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ordenes", jPanel4);
+
+        jButton5.setText("SALIR");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -486,15 +550,21 @@ public class DTrump extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton5)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -502,6 +572,13 @@ public class DTrump extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
+        Empleados temp = (Empleados) lista_empleados.getSelectedItem();
+        nombre_empleado_m.setText(temp.getNombre());
+        id_empleado_m.setText(Integer.toString(temp.getID()));
+        edad_empleado_m.setText(Integer.toString(temp.getEdad()));
+        salario_empleado_m.setText(Integer.toString(temp.getSalario()));
+        direccion_empleado_m.setText(temp.getDireccion());
+
         jd_modificar_empleados.setModal(true);
         jd_modificar_empleados.pack();
         jd_modificar_empleados.setLocationRelativeTo(this);
@@ -531,7 +608,7 @@ public class DTrump extends javax.swing.JFrame {
             serie_material.setText("");
             boolean repetido = false;
             for (int i = 0; i < catalogo.size(); i++) {
-                if ((((Materiales) catalogo.at(i)).nombre).equals(nombre) && (((Materiales) catalogo.at(i)).marca).equals(marca) ) {
+                if ((((Materiales) catalogo.at(i)).nombre).equals(nombre) && (((Materiales) catalogo.at(i)).marca).equals(marca)) {
                     repetido = true;
                 }
             }
@@ -542,7 +619,7 @@ public class DTrump extends javax.swing.JFrame {
                 a.addRow(row);
 
                 JOptionPane.showMessageDialog(this, "Material Agregado");
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(this, "Ese material ya se encuentra en el catalogo");
             }
         }
@@ -554,6 +631,7 @@ public class DTrump extends javax.swing.JFrame {
         if (jButton1.isEnabled()) {
             String Nombre, Direccion;
             int ID, Edad, Salario;
+            boolean Agregar = true;
 
             Nombre = nombre_empleado.getText();
             Direccion = direccion_empleado.getText();
@@ -561,22 +639,37 @@ public class DTrump extends javax.swing.JFrame {
             Edad = Integer.parseInt(edad_empleado.getText());
             Salario = Integer.parseInt(salario_empleado.getText());
 
-            empleados.Queue(new Empleados(Nombre, ID, Edad, Direccion, Salario));
-            lista_empleados.addItem(new Empleados(Nombre, ID, Edad, Direccion, Salario));
-            JOptionPane.showMessageDialog(this, "Ha agregado un empleado",
-                    "AGREGAR EMPLEADOS", JOptionPane.INFORMATION_MESSAGE);
+            Empleados nuevo_empleado = new Empleados(Nombre, ID, Edad, Direccion, Salario);
+            for (int i = 0; i < lista_empleados.getItemCount(); i++) {
+                if (((((Empleados) (lista_empleados.getItemAt(i))).getNombre()).toLowerCase()).equals(Nombre.toLowerCase())) {
+                    Agregar = false;
+                }
+            }
 
-            nombre_empleado.setText("");
-            direccion_empleado.setText("");
-            id_empleado.setText("");
-            edad_empleado.setText("");
-            salario_empleado.setText("");
+            if (Agregar) {
+                empleados.Queue(nuevo_empleado);
+                lista_empleados.addItem(nuevo_empleado);
+                lista_empleados_temp.push_back(nuevo_empleado);
+                JOptionPane.showMessageDialog(this, "Ha agregado un empleado",
+                        "AGREGAR EMPLEADOS", JOptionPane.INFORMATION_MESSAGE);
+
+                nombre_empleado.setText("");
+                direccion_empleado.setText("");
+                id_empleado.setText("");
+                edad_empleado.setText("");
+                salario_empleado.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this, "Esta agregando un empleado ya existente",
+                        "AGREGAR EMPLEADOS", JOptionPane.INFORMATION_MESSAGE);
+
+                nombre_empleado.setText("");
+            }
+
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseMoved
         // TODO add your handling code here:
-
         if ((nombre_empleado.getText()).equals("") || (id_empleado.getText()).equals("")
                 || (edad_empleado.getText()).equals("") || (salario_empleado.getText()).equals("")
                 || (direccion_empleado.getText()).equals("")) {
@@ -596,6 +689,80 @@ public class DTrump extends javax.swing.JFrame {
             bt_agregar_material.setEnabled(true);
         }
     }//GEN-LAST:event_bt_agregar_materialMouseMoved
+
+    private void jButton4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseMoved
+        // TODO add your handling code here:
+        if ((nombre_empleado_m.getText()).equals("") || (id_empleado_m.getText()).equals("")
+                || (edad_empleado_m.getText()).equals("") || (salario_empleado_m.getText()).equals("")
+                || (direccion_empleado_m.getText()).equals("")) {
+
+            jButton4.setEnabled(false);
+        } else {
+            jButton4.setEnabled(true);
+        }
+    }//GEN-LAST:event_jButton4MouseMoved
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        if (jButton4.isEnabled()) {
+            Empleados temp = (Empleados) lista_empleados.getSelectedItem();
+
+            temp.setNombre(nombre_empleado_m.getText());
+            temp.setID(Integer.parseInt(id_empleado_m.getText()));
+            temp.setEdad(Integer.parseInt(edad_empleado_m.getText()));
+            temp.setSalario(Integer.parseInt(salario_empleado_m.getText()));
+            temp.setDireccion(direccion_empleado_m.getText());
+
+            nombre_empleado_m.setText("");
+            id_empleado_m.setText("");
+            edad_empleado_m.setText("");
+            salario_empleado_m.setText("");
+            direccion_empleado_m.setText("");
+        }
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseMoved
+        // TODO add your handling code here:
+        if (lista_empleados.getItemCount() == 0) {
+            jButton2.setEnabled(false);
+        } else {
+            jButton2.setEnabled(true);
+        }
+    }//GEN-LAST:event_jButton2MouseMoved
+
+    private void jButton3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseMoved
+        // TODO add your handling code here:
+        if (lista_empleados.getItemCount() == 0) {
+            jButton3.setEnabled(false);
+        } else {
+            jButton3.setEnabled(true);
+        }
+    }//GEN-LAST:event_jButton3MouseMoved
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        lista_empleados_temp.erase(lista_empleados.getSelectedIndex() - 1);
+        lista_empleados.removeAllItems();
+        
+        while(empleados.GetSize() != 0){
+          empleados.DeQueue();  
+        }     
+
+        for (int i = 0; i < lista_empleados_temp.size(); i++) {
+            lista_empleados.addItem(lista_empleados_temp.at(i));
+        }
+        
+        for (int i = 0; i < lista_empleados_temp.size(); i++) {
+            empleados.Queue((Empleados)lista_empleados_temp.at(i));
+        }
+
+
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -649,6 +816,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -677,6 +845,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JDialog jd_modificar_empleados;
     private javax.swing.JDialog jd_modificar_material;
+    private javax.swing.JLabel jl_hora;
     private javax.swing.JComboBox<Object> lista_empleados;
     private javax.swing.JTextField marca_material;
     private javax.swing.JTextField marca_material_modificar;
@@ -689,7 +858,9 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JTextField serie_material;
     private javax.swing.JTextField serie_material_modificar;
     private javax.swing.JTable tabla_materiales;
+    private javax.swing.JLabel titulo_cronometro;
     // End of variables declaration//GEN-END:variables
     Lista catalogo = new Lista();
     Cola_Empleados empleados = new Cola_Empleados();
+    Lista lista_empleados_temp = new Lista();
 }
