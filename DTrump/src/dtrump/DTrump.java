@@ -74,7 +74,6 @@ public class DTrump extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         lista_empleados = new javax.swing.JComboBox<>();
-        jLabel19 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tabla_materiales = new javax.swing.JTable();
@@ -89,11 +88,7 @@ public class DTrump extends javax.swing.JFrame {
         bt_agregar_material = new javax.swing.JButton();
         bt_modificar_material = new javax.swing.JButton();
         bt_eliminar_material = new javax.swing.JButton();
-<<<<<<< HEAD
-        jLabel20 = new javax.swing.JLabel();
-=======
         jLabel19 = new javax.swing.JLabel();
->>>>>>> 8820fcfdc0e4dcc9f298df8f130d7fcf1fdc4e9a
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jl_hora = new javax.swing.JLabel();
@@ -267,42 +262,20 @@ public class DTrump extends javax.swing.JFrame {
         jTabbedPane1.setToolTipText("");
 
         jPanel1.setToolTipText("");
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
         jLabel1.setText("Nombre");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 23, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
         jLabel2.setText("ID");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 73, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
         jLabel3.setText("Edad");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 113, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
         jLabel4.setText("Direccion");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 216, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(254, 254, 254));
         jLabel5.setText("Salario");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 167, -1, -1));
-        jPanel1.add(nombre_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 18, 322, -1));
-        jPanel1.add(id_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 63, 110, -1));
-        jPanel1.add(edad_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 108, 110, -1));
-        jPanel1.add(salario_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 162, 110, -1));
 
         direccion_empleado.setColumns(20);
         direccion_empleado.setRows(5);
         jScrollPane1.setViewportView(direccion_empleado);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 216, 404, -1));
 
         jButton1.setText("AGREGAR");
         jButton1.setToolTipText("Da click para agregar un empleado");
@@ -316,7 +289,6 @@ public class DTrump extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 349, 139, 64));
 
         jButton2.setText("MODIFICAR");
         jButton2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -329,7 +301,6 @@ public class DTrump extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 351, -1, -1));
 
         jButton3.setText("ELIMINAR");
         jButton3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -342,16 +313,79 @@ public class DTrump extends javax.swing.JFrame {
                 jButton3MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 351, -1, -1));
 
-        jPanel1.add(lista_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 386, 261, -1));
-
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 460));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5))
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombre_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(edad_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(salario_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(id_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lista_empleados, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton3))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(nombre_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(id_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(edad_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(salario_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(46, 46, 46)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jButton3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lista_empleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
 
         jTabbedPane1.addTab("Empleados", jPanel1);
-
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tabla_materiales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -371,31 +405,13 @@ public class DTrump extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tabla_materiales);
 
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 258, 461, 134));
-
-        jLabel11.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(254, 254, 254));
         jLabel11.setText("Nombre");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 29, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(254, 254, 254));
         jLabel12.setText("Descripcion");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 79, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(254, 254, 254));
         jLabel13.setText("Marca");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 119, -1, -1));
 
-        jLabel14.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(254, 254, 254));
         jLabel14.setText("Numero de Serie");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 171, -1, -1));
-        jPanel2.add(nombre_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 24, 181, -1));
-        jPanel2.add(descripcion_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 74, 181, -1));
-        jPanel2.add(marca_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 119, 181, -1));
-        jPanel2.add(serie_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 166, 186, -1));
 
         bt_agregar_material.setText("Agregar");
         bt_agregar_material.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -408,7 +424,6 @@ public class DTrump extends javax.swing.JFrame {
                 bt_agregar_materialMouseClicked(evt);
             }
         });
-        jPanel2.add(bt_agregar_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 211, -1, -1));
 
         bt_modificar_material.setText("Modificar");
         bt_modificar_material.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -416,7 +431,6 @@ public class DTrump extends javax.swing.JFrame {
                 bt_modificar_materialMouseClicked(evt);
             }
         });
-        jPanel2.add(bt_modificar_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 410, -1, -1));
 
         bt_eliminar_material.setText("Eliminar");
         bt_eliminar_material.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -424,12 +438,7 @@ public class DTrump extends javax.swing.JFrame {
                 bt_eliminar_materialMouseClicked(evt);
             }
         });
-        jPanel2.add(bt_eliminar_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 410, -1, -1));
 
-<<<<<<< HEAD
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 460));
-=======
         jLabel19.setText("Catalogo");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -496,7 +505,6 @@ public class DTrump extends javax.swing.JFrame {
                     .addComponent(bt_eliminar_material))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
->>>>>>> 8820fcfdc0e4dcc9f298df8f130d7fcf1fdc4e9a
 
         jTabbedPane1.addTab("Materiales", jPanel2);
 
@@ -761,7 +769,7 @@ public class DTrump extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-        lista_empleados_temp.erase(lista_empleados.getSelectedIndex());
+        lista_empleados_temp.erase(lista_empleados.getSelectedIndex() - 1);
         lista_empleados.removeAllItems();
 
         while (empleados.GetSize() != 0) {
@@ -896,7 +904,6 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
