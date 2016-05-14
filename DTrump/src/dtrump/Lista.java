@@ -58,7 +58,12 @@ public class Lista {
         }
         if (temp.hasNext()) {
             node eliminado = temp.getNext();
-            temp.setNext(eliminado.getNext());
+            if (eliminado.hasNext()) {
+                temp.setNext(eliminado.getNext());
+            }else{
+                eliminado = null;
+                temp.setNext(eliminado);
+            }
         }else{
             head=null;
         }

@@ -44,7 +44,7 @@ public class Cola_Empleados {
             top = null;
             size--;
         } else if(size == 2){
-            head = head.getNext();
+            head = top;
             top = null;
             size--;
         }else{
