@@ -596,6 +596,7 @@ public class DTrump extends javax.swing.JFrame {
                 empleados.Queue(nuevo_empleado);
                 lista_empleados.addItem(nuevo_empleado);
                 lista_empleados_temp.push_back(nuevo_empleado);
+                
                 JOptionPane.showMessageDialog(this, "Ha agregado un empleado",
                         "AGREGAR EMPLEADOS", JOptionPane.INFORMATION_MESSAGE);
 
@@ -694,7 +695,7 @@ public class DTrump extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-        lista_empleados_temp.erase(lista_empleados.getSelectedIndex() - 1);
+        lista_empleados_temp.erase(lista_empleados.getSelectedIndex());
         lista_empleados.removeAllItems();
 
         while (empleados.GetSize() != 0) {
