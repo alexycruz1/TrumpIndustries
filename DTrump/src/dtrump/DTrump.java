@@ -93,6 +93,7 @@ public class DTrump extends javax.swing.JFrame {
         bt_modificar_material = new javax.swing.JButton();
         bt_eliminar_material = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -101,7 +102,6 @@ public class DTrump extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
 
         jd_modificar_empleados.setTitle("MODIFICAR EMPLEADOS");
-        jd_modificar_empleados.setResizable(false);
         jd_modificar_empleados.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         direccion_empleado_m.setColumns(20);
@@ -374,6 +374,9 @@ public class DTrump extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(254, 254, 254));
         jLabel19.setText("Catalogo");
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 243, -1, -1));
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/13249521_10209521280339229_1155212027_n.png.jpeg"))); // NOI18N
+        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 60, 30));
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
         jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 460));
@@ -780,6 +783,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
