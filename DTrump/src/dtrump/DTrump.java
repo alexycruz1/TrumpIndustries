@@ -20,6 +20,7 @@ public class DTrump extends javax.swing.JFrame {
     public DTrump() {
         initComponents();
 
+        this.setLocationRelativeTo(null);
         Hilo hora = new Hilo(jl_hora);
         Thread proceso = new Thread(hora);
         proceso.start();
@@ -100,6 +101,7 @@ public class DTrump extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
 
         jd_modificar_empleados.setTitle("MODIFICAR EMPLEADOS");
+        jd_modificar_empleados.setResizable(false);
         jd_modificar_empleados.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         direccion_empleado_m.setColumns(20);
@@ -154,6 +156,7 @@ public class DTrump extends javax.swing.JFrame {
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
         jd_modificar_empleados.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 460));
 
+        jd_modificar_material.setResizable(false);
         jd_modificar_material.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
@@ -199,6 +202,7 @@ public class DTrump extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TRUMP TOWER ©");
+        setResizable(false);
 
         jTabbedPane1.setToolTipText("");
 
@@ -595,13 +599,26 @@ public class DTrump extends javax.swing.JFrame {
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
         if (jButton4.isEnabled()) {
-            Empleados temp = (Empleados) lista_empleados.getSelectedItem();
+            Empleados temp1 = (Empleados)lista_empleados_temp.at(lista_empleados.getSelectedIndex());
 
-            temp.setNombre(nombre_empleado_m.getText());
-            temp.setID(Integer.parseInt(id_empleado_m.getText()));
-            temp.setEdad(Integer.parseInt(edad_empleado_m.getText()));
-            temp.setSalario(Integer.parseInt(salario_empleado_m.getText()));
-            temp.setDireccion(direccion_empleado_m.getText());
+            temp1.setNombre(nombre_empleado_m.getText());
+            temp1.setID(Integer.parseInt(id_empleado_m.getText()));
+            temp1.setEdad(Integer.parseInt(edad_empleado_m.getText()));
+            temp1.setSalario(Integer.parseInt(salario_empleado_m.getText()));
+            temp1.setDireccion(direccion_empleado_m.getText());
+            
+            lista_empleados.removeAllItems();
+
+            while (empleados.GetSize() != 0) {
+                empleados.DeQueue();
+            }
+
+            for (int i = 0; i < lista_empleados_temp.size(); i++) {
+                lista_empleados.addItem(lista_empleados_temp.at(i));
+            }
+            for (int i = 0; i < lista_empleados_temp.size(); i++) {
+                empleados.Queue((Empleados) lista_empleados_temp.at(i));
+            }
 
             nombre_empleado_m.setText("");
             id_empleado_m.setText("");
