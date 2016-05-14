@@ -10,6 +10,7 @@ package dtrump;
  * @author alexy
  */
 public class Cola_Empleados {
+
     int size = 0;
     node head = null;
     node top = null;
@@ -22,31 +23,42 @@ public class Cola_Empleados {
         this.head = head;
         this.top = top;
     }
-    
-    public void Queue(Empleados empleado){
+
+    public void Queue(Empleados empleado) {
         size++;
         node nuevo_empleado = new node(empleado, null);
         if (size == 1) {
             head = nuevo_empleado;
-        }else if(size == 2){
+        } else if (size == 2) {
             head.setNext(new node(empleado, null));
             top = head.getNext();
-        }else{
+        } else {
             top.setNext(new node(empleado, null));
             top = top.getNext();
         }
     }
-    
-    public void DeQueue(){
-        head = head.getNext();
-        size--;
+
+    public void DeQueue() {
+        if (size == 1) {
+            head = null;
+            top = null;
+            size--;
+        } else if(size == 2){
+            head = head.getNext();
+            top = null;
+            size--;
+        }else{
+            head = head.getNext();
+            size--;
+        }
+
     }
-    
-    public void Peek(){
+
+    public void Peek() {
         head.getValue();
     }
-    
-    public int GetSize(){
+
+    public int GetSize() {
         return size;
     }
 }
