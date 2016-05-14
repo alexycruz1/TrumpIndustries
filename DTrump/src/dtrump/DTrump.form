@@ -239,6 +239,10 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="guardar_materialMouseMoved"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="guardar_materialMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="nombre_material_modificar">
         </Component>
@@ -335,13 +339,10 @@
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="nombre_empleado" min="-2" pref="322" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="edad_empleado" min="-2" pref="110" max="-2" attributes="0"/>
-                                          <Component id="salario_empleado" min="-2" pref="110" max="-2" attributes="0"/>
-                                          <Component id="id_empleado" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Component id="edad_empleado" min="-2" pref="110" max="-2" attributes="0"/>
+                                      <Component id="salario_empleado" min="-2" pref="110" max="-2" attributes="0"/>
+                                      <Component id="id_empleado" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -664,6 +665,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_eliminar_materialMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

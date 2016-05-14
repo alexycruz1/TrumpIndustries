@@ -192,6 +192,16 @@ public class DTrump extends javax.swing.JFrame {
         jLabel18.setText("Numero de Serie");
 
         guardar_material.setText("Guardar");
+        guardar_material.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                guardar_materialMouseMoved(evt);
+            }
+        });
+        guardar_material.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                guardar_materialMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_modificar_materialLayout = new javax.swing.GroupLayout(jd_modificar_material.getContentPane());
         jd_modificar_material.getContentPane().setLayout(jd_modificar_materialLayout);
@@ -319,12 +329,10 @@ public class DTrump extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nombre_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(edad_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(salario_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(id_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(36, 36, 36))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(edad_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(salario_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(id_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -424,6 +432,11 @@ public class DTrump extends javax.swing.JFrame {
         });
 
         bt_eliminar_material.setText("Eliminar");
+        bt_eliminar_material.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_eliminar_materialMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -586,10 +599,12 @@ public class DTrump extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void bt_modificar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_modificar_materialMouseClicked
-        jd_modificar_material.pack();
-        jd_modificar_material.setModal(true);
-        jd_modificar_material.setLocationRelativeTo(this);
-        jd_modificar_material.setVisible(true);
+        if (tabla_materiales.getSelectedRow() >= 0) {
+            jd_modificar_material.pack();
+            jd_modificar_material.setModal(true);
+            jd_modificar_material.setLocationRelativeTo(this);
+            jd_modificar_material.setVisible(true);
+        }
     }//GEN-LAST:event_bt_modificar_materialMouseClicked
 
     private void bt_agregar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregar_materialMouseClicked
@@ -614,6 +629,9 @@ public class DTrump extends javax.swing.JFrame {
             }
             if (!repetido) {
                 catalogo.push_back(new Materiales(nombre, descripcion, marca, id));
+                Pila materiales = new Pila();
+                materiales.push(new Materiales(nombre, descripcion, marca, id));
+                inventario.push_back(materiales);
                 DefaultTableModel a = (DefaultTableModel) tabla_materiales.getModel();
                 String[] row = {nombre, descripcion, marca, Integer.toString(id)};
                 a.addRow(row);
@@ -718,7 +736,7 @@ public class DTrump extends javax.swing.JFrame {
             edad_empleado_m.setText("");
             salario_empleado_m.setText("");
             direccion_empleado_m.setText("");
-            
+
             jd_modificar_empleados.setVisible(false);
         }
     }//GEN-LAST:event_jButton4MouseClicked
@@ -750,21 +768,74 @@ public class DTrump extends javax.swing.JFrame {
         // TODO add your handling code here:
         lista_empleados_temp.erase(lista_empleados.getSelectedIndex() - 1);
         lista_empleados.removeAllItems();
-        
-        while(empleados.GetSize() != 0){
-          empleados.DeQueue();  
-        }     
+
+        while (empleados.GetSize() != 0) {
+            empleados.DeQueue();
+        }
 
         for (int i = 0; i < lista_empleados_temp.size(); i++) {
             lista_empleados.addItem(lista_empleados_temp.at(i));
         }
-        
+
         for (int i = 0; i < lista_empleados_temp.size(); i++) {
-            empleados.Queue((Empleados)lista_empleados_temp.at(i));
+            empleados.Queue((Empleados) lista_empleados_temp.at(i));
         }
 
 
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void bt_eliminar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_eliminar_materialMouseClicked
+        if (tabla_materiales.getSelectedRow() >= 0) {
+            DefaultTableModel m = (DefaultTableModel) tabla_materiales.getModel();
+            m.removeRow(tabla_materiales.getSelectedRow());
+            catalogo.erase(tabla_materiales.getSelectedRow());
+            inventario.erase(tabla_materiales.getSelectedRow());
+
+            tabla_materiales.setModel(m);
+            System.out.println(catalogo.size());
+            System.out.println(inventario.size());
+        }
+    }//GEN-LAST:event_bt_eliminar_materialMouseClicked
+
+    private void guardar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardar_materialMouseClicked
+        String nombre,descripcion,marca;
+        int serie,posicion;
+        posicion = tabla_materiales.getSelectedRow();
+        nombre =nombre_material_modificar.getText();
+        descripcion = descripcion_material_modificar.getText();
+        marca = marca_material_modificar.getText();
+        serie=Integer.parseInt(serie_material_modificar.getText());
+        ((Materiales)catalogo.at(posicion)).setNombre(nombre);
+        ((Materiales)catalogo.at(posicion)).setMarca(marca);
+        ((Materiales)catalogo.at(posicion)).setID(serie);
+        ((Materiales)catalogo.at(posicion)).setDescripcion(descripcion);
+        ((Pila)(inventario.at(posicion))).modificar(nombre, descripcion, marca, serie);
+        DefaultTableModel m = (DefaultTableModel)tabla_materiales.getModel();
+        
+        for (int i = 0; i < catalogo.size(); i++) {
+            m.removeRow(0);
+        }
+        for (int i = 0; i < catalogo.size(); i++) {
+            String[] row = {((Materiales)catalogo.at(i)).getNombre(),((Materiales)catalogo.at(i)).getDescripcion(),
+            ((Materiales)catalogo.at(i)).getMarca(),Integer.toString(((Materiales)catalogo.at(i)).getID())};
+            m.addRow(row);
+        }
+        jd_modificar_material.setVisible(false);
+        nombre_material_modificar.setText("");
+        descripcion_material_modificar.setText("");
+        marca_material_modificar.setText("");
+        serie_material_modificar.setText("");
+    }//GEN-LAST:event_guardar_materialMouseClicked
+
+    private void guardar_materialMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardar_materialMouseMoved
+        if ((nombre_material_modificar.getText()).equals("") || (descripcion_material_modificar.getText()).equals("")
+                || (serie_material_modificar.getText()).equals("") || (marca_material_modificar.getText()).equals("")) {
+
+            guardar_material.setEnabled(false);
+        } else {
+            guardar_material.setEnabled(true);
+        }
+    }//GEN-LAST:event_guardar_materialMouseMoved
 
     /**
      * @param args the command line arguments
@@ -863,6 +934,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JLabel titulo_cronometro;
     // End of variables declaration//GEN-END:variables
     Lista catalogo = new Lista();
+    Lista inventario = new Lista();
     Cola_Empleados empleados = new Cola_Empleados();
     Lista lista_empleados_temp = new Lista();
 }

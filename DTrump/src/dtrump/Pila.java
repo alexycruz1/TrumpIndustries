@@ -26,4 +26,12 @@ public class Pila {
     public void pop(){
         arreglo.erase(arreglo.size()-1);
     }
+    public void modificar(String nombre, String descripcion, String marca, int serie){
+        for (int i = 0; i < arreglo.size(); i++) {
+            ((Materiales)arreglo.at(i)).setNombre(nombre);
+            ((Materiales)arreglo.at(i)).setDescripcion(descripcion);
+            ((Materiales)arreglo.at(i)).setMarca(marca);
+            ((Materiales)arreglo.at(i)).setID(serie);
+        }
+    }
 }
