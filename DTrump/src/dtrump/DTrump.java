@@ -718,7 +718,9 @@ public class DTrump extends javax.swing.JFrame {
             m.removeRow(tabla_materiales.getSelectedRow());
             catalogo.erase(tabla_materiales.getSelectedRow());
             inventario.erase(tabla_materiales.getSelectedRow());
-
+            for (int i = 0; i < catalogo.size(); i++) {
+                System.out.println(((Materiales)catalogo.at(i)).getNombre());
+            }
             tabla_materiales.setModel(m);
             System.out.println(catalogo.size());
             System.out.println(inventario.size());
