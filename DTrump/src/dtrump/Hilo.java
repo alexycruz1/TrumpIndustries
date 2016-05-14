@@ -14,15 +14,15 @@ import javax.swing.JLabel;
  *
  * @author alexy
  */
-public class HiloHora implements Runnable {
+public class Hilo implements Runnable {
     private JLabel hora;
     private int secs = 0;
     boolean Avanzar = true;
 
-    public HiloHora() {
+    public Hilo() {
     }
 
-    public HiloHora(JLabel hora) {
+    public Hilo(JLabel hora) {
         this.hora = hora;
     }
     
@@ -37,9 +37,6 @@ public class HiloHora implements Runnable {
     @Override
     public void run() {
         while (Avanzar) {
-            /*Date h = new Date();
-            DateFormat f = new SimpleDateFormat("hh:mm:ss");
-            hora.setText(f.format(h));*/
             hora.setText(Integer.toString(secs));
             secs++;
 

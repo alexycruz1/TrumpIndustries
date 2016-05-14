@@ -20,7 +20,7 @@ public class DTrump extends javax.swing.JFrame {
     public DTrump() {
         initComponents();
 
-        HiloHora hora = new HiloHora(jl_hora);
+        Hilo hora = new Hilo(jl_hora);
         Thread proceso = new Thread(hora);
         proceso.start();
     }
