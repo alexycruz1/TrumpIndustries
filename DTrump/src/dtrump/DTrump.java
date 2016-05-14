@@ -89,7 +89,11 @@ public class DTrump extends javax.swing.JFrame {
         bt_agregar_material = new javax.swing.JButton();
         bt_modificar_material = new javax.swing.JButton();
         bt_eliminar_material = new javax.swing.JButton();
+<<<<<<< HEAD
         jLabel20 = new javax.swing.JLabel();
+=======
+        jLabel19 = new javax.swing.JLabel();
+>>>>>>> 8820fcfdc0e4dcc9f298df8f130d7fcf1fdc4e9a
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jl_hora = new javax.swing.JLabel();
@@ -422,8 +426,77 @@ public class DTrump extends javax.swing.JFrame {
         });
         jPanel2.add(bt_eliminar_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 410, -1, -1));
 
+<<<<<<< HEAD
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
         jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 460));
+=======
+        jLabel19.setText("Catalogo");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(bt_modificar_material)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_eliminar_material))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(32, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel14))
+                                .addGap(8, 8, 8)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(marca_material, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                                    .addComponent(nombre_material)
+                                    .addComponent(descripcion_material)
+                                    .addComponent(serie_material)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(141, 141, 141)
+                                .addComponent(bt_agregar_material))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19))))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(nombre_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(descripcion_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(marca_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(serie_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(bt_agregar_material)
+                .addGap(3, 3, 3)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_modificar_material)
+                    .addComponent(bt_eliminar_material))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+>>>>>>> 8820fcfdc0e4dcc9f298df8f130d7fcf1fdc4e9a
 
         jTabbedPane1.addTab("Materiales", jPanel2);
 
@@ -698,7 +771,6 @@ public class DTrump extends javax.swing.JFrame {
         for (int i = 0; i < lista_empleados_temp.size(); i++) {
             lista_empleados.addItem(lista_empleados_temp.at(i));
         }
-
         for (int i = 0; i < lista_empleados_temp.size(); i++) {
             empleados.Queue((Empleados) lista_empleados_temp.at(i));
         }
