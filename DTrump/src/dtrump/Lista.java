@@ -1,10 +1,9 @@
-
 package dtrump;
 
-
 public class Lista {
+
     private node head = null;
-    
+
     public Lista() {
     }
 
@@ -47,20 +46,30 @@ public class Lista {
                 break;
             }
         }
-        
+
         return temp.getValue();
     }
 
     public void erase(int posicion) {
-       node temp = head;
-        for (int i = 1; i < posicion; i++) {
-                temp = temp.getNext();
+        node temp = head;
+        if (posicion ==-1) {
+            posicion++;
         }
-        if (temp.hasNext()) {
-            node eliminado = temp.getNext();
-            temp.setNext(eliminado.getNext());
+        System.out.println(posicion);
+        if (posicion != 0) {
+            for (int i = 1; i < posicion; i++) {
+                temp = temp.getNext();
+            }
+            if (temp.hasNext()) {
+                node eliminado = temp.getNext();
+                temp.setNext(eliminado.getNext());
+            } else {
+                head = null;
+            }
         }else{
-            head=null;
+            System.out.println("hola");
+            node nuevo_head=head.getNext();
+            head = nuevo_head;
         }
     }
 
