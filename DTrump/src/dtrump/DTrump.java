@@ -335,7 +335,7 @@ public class DTrump extends javax.swing.JFrame {
         jPanel2.add(marca_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 119, 181, -1));
         jPanel2.add(serie_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 166, 181, -1));
 
-        bt_agregar_material.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/ThumbnailAction.do.png"))); // NOI18N
+        bt_agregar_material.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/index.png"))); // NOI18N
         bt_agregar_material.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 bt_agregar_materialMouseMoved(evt);
