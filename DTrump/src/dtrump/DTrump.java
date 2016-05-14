@@ -718,6 +718,8 @@ public class DTrump extends javax.swing.JFrame {
             edad_empleado_m.setText("");
             salario_empleado_m.setText("");
             direccion_empleado_m.setText("");
+            
+            jd_modificar_empleados.setVisible(false);
         }
     }//GEN-LAST:event_jButton4MouseClicked
 
