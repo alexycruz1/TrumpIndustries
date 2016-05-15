@@ -1135,6 +1135,11 @@ public class DTrump extends javax.swing.JFrame {
         
         productos.push_back(new Productos(nombre,descripcion,tiempo));
         cb_productos_ordenes.addItem(new Productos(nombre,descripcion,tiempo));
+        cb_productos.addItem(new Productos(nombre,descripcion,tiempo));
+        
+        nombre_producto.setText("");
+        descripcion_producto.setText("");
+        tiempo_producto.setText("");
     }//GEN-LAST:event_crear_productoMouseClicked
 
     /**
