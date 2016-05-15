@@ -54,8 +54,8 @@ public class Cola_Empleados {
 
     }
 
-    public void Peek() {
-        head.getValue();
+    public Object Peek() {
+        return head.getValue();
     }
 
     public int GetSize() {

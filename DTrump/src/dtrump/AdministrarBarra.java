@@ -5,6 +5,7 @@
  */
 package dtrump;
 
+import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 
 /**
