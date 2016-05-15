@@ -948,7 +948,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="añadir_material" min="-2" max="-2" attributes="0"/>
                                   <Component id="jScrollPane4" min="-2" pref="308" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -998,7 +998,7 @@
                       <EmptySpace pref="27" max="32767" attributes="0"/>
                       <Component id="jScrollPane4" min="-2" pref="94" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                      <Component id="añadir_material" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="jButton9" min="-2" pref="62" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -1062,10 +1062,13 @@
                 <Property name="text" type="java.lang.String" value="Crear Producto"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton8">
+            <Component class="javax.swing.JButton" name="a&#xf1;adir_material">
               <Properties>
                 <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="a&#xf1;adir_materialMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton9">
               <Properties>

@@ -113,7 +113,7 @@ public class DTrump extends javax.swing.JFrame {
         t_materiales_productos = new javax.swing.JTable();
         crear_producto = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        añadir_material = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
@@ -512,7 +512,12 @@ public class DTrump extends javax.swing.JFrame {
 
         jLabel31.setText("Crear Producto");
 
-        jButton8.setText("Añadir");
+        añadir_material.setText("Añadir");
+        añadir_material.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                añadir_materialMouseClicked(evt);
+            }
+        });
 
         jButton9.setText("Guardar");
 
@@ -567,7 +572,7 @@ public class DTrump extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton8)
+                            .addComponent(añadir_material)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(89, 89, 89)
@@ -604,7 +609,7 @@ public class DTrump extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton8)
+                .addComponent(añadir_material)
                 .addGap(32, 32, 32)
                 .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
@@ -1117,6 +1122,12 @@ public class DTrump extends javax.swing.JFrame {
         productos.push_back(new Productos(nombre,descripcion,tiempo));
     }//GEN-LAST:event_crear_productoMouseClicked
 
+    private void añadir_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_añadir_materialMouseClicked
+        if (tabla_materiales.getSelectedRow() >= 0) {
+            productos.at(productos.size()-1);
+        }
+    }//GEN-LAST:event_añadir_materialMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1153,6 +1164,7 @@ public class DTrump extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton añadir_material;
     private javax.swing.JButton bt_agregar_material;
     private javax.swing.JButton bt_eliminar_material;
     private javax.swing.JButton bt_modificar_material;
@@ -1185,7 +1197,6 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
