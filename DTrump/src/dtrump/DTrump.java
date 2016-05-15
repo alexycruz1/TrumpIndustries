@@ -59,6 +59,14 @@ public class DTrump extends javax.swing.JFrame {
         marca_material_modificar = new javax.swing.JTextField();
         serie_material_modificar = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
+        jd_modificar_producto = new javax.swing.JDialog();
+        tiempo_producto_m = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        descripcion_producto_m = new javax.swing.JTextField();
+        nombre_producto_m = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -109,7 +117,7 @@ public class DTrump extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox();
+        cb_productos = new javax.swing.JComboBox();
         jPanel4 = new javax.swing.JPanel();
         pb_1 = new javax.swing.JProgressBar();
         jLabel32 = new javax.swing.JLabel();
@@ -129,7 +137,7 @@ public class DTrump extends javax.swing.JFrame {
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        cb_productos_ordenes = new javax.swing.JComboBox<>();
         jLabel38 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
 
@@ -231,6 +239,61 @@ public class DTrump extends javax.swing.JFrame {
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
         jd_modificar_material.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 400));
+
+        jLabel30.setText("Tiempo");
+
+        jLabel39.setText("Descripcion");
+
+        jLabel40.setText("Nombre");
+
+        jButton7.setText("Modificar");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_modificar_productoLayout = new javax.swing.GroupLayout(jd_modificar_producto.getContentPane());
+        jd_modificar_producto.getContentPane().setLayout(jd_modificar_productoLayout);
+        jd_modificar_productoLayout.setHorizontalGroup(
+            jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificar_productoLayout.createSequentialGroup()
+                .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_modificar_productoLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(27, 27, 27)
+                        .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nombre_producto_m)
+                            .addComponent(descripcion_producto_m)
+                            .addComponent(tiempo_producto_m, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_modificar_productoLayout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+        jd_modificar_productoLayout.setVerticalGroup(
+            jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificar_productoLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel40)
+                    .addComponent(nombre_producto_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(descripcion_producto_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(tiempo_producto_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(103, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TRUMP TOWER ©");
@@ -449,8 +512,18 @@ public class DTrump extends javax.swing.JFrame {
         jButton9.setText("Guardar");
 
         jButton16.setText("Modificar");
+        jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton16MouseClicked(evt);
+            }
+        });
 
         jButton17.setText("Eliminar");
+        jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton17MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -471,7 +544,7 @@ public class DTrump extends javax.swing.JFrame {
                             .addComponent(tiempo_producto, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(132, Short.MAX_VALUE)
+                        .addContainerGap(140, Short.MAX_VALUE)
                         .addComponent(crear_producto)
                         .addGap(129, 129, 129)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -479,8 +552,8 @@ public class DTrump extends javax.swing.JFrame {
                         .addComponent(jButton16)
                         .addGap(18, 18, 18)
                         .addComponent(jButton17))
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(106, 106, 106))
+                    .addComponent(cb_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(75, 75, 75))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -511,14 +584,14 @@ public class DTrump extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel28)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cb_productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel29)
                             .addComponent(tiempo_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(crear_producto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton8)
@@ -618,7 +691,7 @@ public class DTrump extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(161, 161, 161)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cb_productos_ordenes, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(238, 238, 238)
                         .addComponent(jLabel38)))
@@ -630,7 +703,7 @@ public class DTrump extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(jLabel38)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cb_productos_ordenes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
@@ -981,16 +1054,48 @@ public class DTrump extends javax.swing.JFrame {
         // TODO add your handling code here:
         String nombre;
         int cont = 10;
-        
-        Empleados empleado_temp = (Empleados)empleados.Peek();
+
+        Empleados empleado_temp = (Empleados) empleados.Peek();
         jLabel32.setText(empleado_temp.getNombre());
-        
+
         Barra = new AdministrarBarra(pb_1);
         Barra.start();
-        
+
         empleados.Queue(empleado_temp);
         empleados.DeQueue();
     }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
+        // TODO add your handling code here:
+        Productos temp = (Productos) cb_productos.getSelectedItem();
+        
+        nombre_producto_m.setText(temp.getNombre());
+        descripcion_producto_m.setText(temp.getDescripcion());
+        tiempo_producto_m.setText(Integer.toString(temp.getTiempo()));
+
+        jd_modificar_empleados.setModal(true);
+        jd_modificar_empleados.pack();
+        jd_modificar_empleados.setLocationRelativeTo(this);
+        jd_modificar_empleados.setVisible(true);
+    }//GEN-LAST:event_jButton16MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        // TODO add your handling code here:
+        String Nombre, Descripcion;
+        int Tiempo;
+        
+        Productos temp = (Productos) cb_productos.getSelectedItem();
+        Nombre = nombre_producto_m.getText();
+        Descripcion = descripcion_producto_m.getText();
+        Tiempo = Integer.parseInt(tiempo_producto_m.getText()); 
+        
+        jd_modificar_producto.setVisible(false);
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+        // TODO add your handling code here:
+        cb_productos.removeItemAt(cb_productos.getSelectedIndex());
+    }//GEN-LAST:event_jButton17MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1031,9 +1136,12 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JButton bt_agregar_material;
     private javax.swing.JButton bt_eliminar_material;
     private javax.swing.JButton bt_modificar_material;
+    private javax.swing.JComboBox cb_productos;
+    private javax.swing.JComboBox<String> cb_productos_ordenes;
     private javax.swing.JButton crear_producto;
     private javax.swing.JTextField descripcion_material;
     private javax.swing.JTextField descripcion_material_modificar;
+    private javax.swing.JTextField descripcion_producto_m;
     private javax.swing.JTextArea direccion_empleado;
     private javax.swing.JTextArea direccion_empleado_m;
     private javax.swing.JTextField edad_empleado;
@@ -1055,10 +1163,9 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1079,6 +1186,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -1087,7 +1195,9 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1111,6 +1221,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JDialog jd_modificar_empleados;
     private javax.swing.JDialog jd_modificar_material;
+    private javax.swing.JDialog jd_modificar_producto;
     private javax.swing.JComboBox<Object> lista_empleados;
     private javax.swing.JTextField marca_material;
     private javax.swing.JTextField marca_material_modificar;
@@ -1119,6 +1230,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JTextField nombre_material;
     private javax.swing.JTextField nombre_material_modificar;
     private javax.swing.JTextField nombre_producto;
+    private javax.swing.JTextField nombre_producto_m;
     private javax.swing.JProgressBar pb_1;
     private javax.swing.JTextField salario_empleado;
     private javax.swing.JTextField salario_empleado_m;
@@ -1126,6 +1238,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JTextField serie_material_modificar;
     private javax.swing.JTable tabla_materiales;
     private javax.swing.JTextField tiempo_producto;
+    private javax.swing.JTextField tiempo_producto_m;
     // End of variables declaration//GEN-END:variables
     AdministrarBarra Barra;
     Lista catalogo = new Lista();
