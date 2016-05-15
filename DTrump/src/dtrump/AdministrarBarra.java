@@ -47,12 +47,16 @@ public class AdministrarBarra extends Thread{
         this.vive = vive;
     }
     
+    public void setValue(){
+        barra.setValue(0);
+    }
+    
     @Override
     public void run(){
         while(vive){
             if (avanzar) {
                 barra.setValue(barra.getValue() + 1);
-                if (barra.getValue() == 100000000) {
+                if (barra.getValue() == barra.getMaximum()) {
                     vive = false;
                 }
                 try{

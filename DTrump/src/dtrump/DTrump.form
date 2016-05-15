@@ -1098,6 +1098,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel4">
+          <Events>
+            <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="jPanel4MouseMoved"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Ordenes">
@@ -1113,12 +1116,12 @@
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="pb_1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jProgressBar2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="pb_2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Component id="jButton10" min="-2" pref="104" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jProgressBar3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="pb_3" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                               <Component id="jButton11" min="-2" max="-2" attributes="0"/>
@@ -1135,9 +1138,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jProgressBar4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jProgressBar5" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jProgressBar6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="pb_4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="pb_5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="pb_6" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
@@ -1193,7 +1196,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="pb_1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jProgressBar4" min="-2" max="-2" attributes="0"/>
+                          <Component id="pb_4" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1207,8 +1210,8 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jProgressBar2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jProgressBar5" min="-2" max="-2" attributes="0"/>
+                          <Component id="pb_2" min="-2" max="-2" attributes="0"/>
+                          <Component id="pb_5" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1222,8 +1225,8 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jProgressBar3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jProgressBar6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="pb_3" min="-2" max="-2" attributes="0"/>
+                          <Component id="pb_6" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1254,7 +1257,7 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton10MouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JProgressBar" name="jProgressBar2">
+            <Component class="javax.swing.JProgressBar" name="pb_2">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel33">
               <Properties>
@@ -1271,18 +1274,18 @@
                 <Property name="text" type="java.lang.String" value="Empleado #3"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JProgressBar" name="jProgressBar3">
+            <Component class="javax.swing.JProgressBar" name="pb_3">
             </Component>
             <Component class="javax.swing.JButton" name="jButton12">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear orden"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JProgressBar" name="jProgressBar4">
+            <Component class="javax.swing.JProgressBar" name="pb_4">
             </Component>
-            <Component class="javax.swing.JProgressBar" name="jProgressBar5">
+            <Component class="javax.swing.JProgressBar" name="pb_5">
             </Component>
-            <Component class="javax.swing.JProgressBar" name="jProgressBar6">
+            <Component class="javax.swing.JProgressBar" name="pb_6">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel35">
               <Properties>
