@@ -12,5 +12,10 @@ import java.util.ArrayList;
  * @author alexy
  */
 public class Productos {
-    
+    String nombre;
+    String descripcion;
+    int tiempo;
+    ArrayList<String> nombre_materiales = new ArrayList();
+    ArrayList<String> marca = new ArrayList();
+    ArrayList<Integer> cantidad = new ArrayList();
 }
