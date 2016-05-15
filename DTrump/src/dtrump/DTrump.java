@@ -19,11 +19,12 @@ public class DTrump extends javax.swing.JFrame {
      */
     public DTrump() {
         initComponents();
-
-        this.setLocationRelativeTo(null);
-        Hilo hora = new Hilo(jl_hora);
-        Thread proceso = new Thread(hora);
-        proceso.start();
+        
+        //Hilo secs = new Hilo();
+        //Thread proceso1 = new Thread(secs);
+        //proceso1.start();
+        
+        //Barra = new AdministrarBarra(Nombre_de_la_barra);
     }
 
     /**
@@ -97,8 +98,6 @@ public class DTrump extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jl_hora = new javax.swing.JLabel();
-        titulo_cronometro = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
 
         jd_modificar_empleados.setTitle("MODIFICAR EMPLEADOS");
@@ -376,6 +375,7 @@ public class DTrump extends javax.swing.JFrame {
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 243, -1, -1));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/13249521_10209521280339229_1155212027_n.png.jpeg"))); // NOI18N
+        jButton6.setToolTipText("Añadir al inventario");
         jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 60, 30));
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
@@ -396,34 +396,15 @@ public class DTrump extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Productos", jPanel3);
 
-        jl_hora.setFont(new java.awt.Font("Palatino Linotype", 1, 24)); // NOI18N
-        jl_hora.setForeground(new java.awt.Color(214, 27, 58));
-        jl_hora.setText("0");
-
-        titulo_cronometro.setFont(new java.awt.Font("Palatino Linotype", 1, 24)); // NOI18N
-        titulo_cronometro.setText("Tiempo total de operacion:");
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(titulo_cronometro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(176, 176, 176))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addComponent(jl_hora)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 541, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(titulo_cronometro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jl_hora)
-                .addContainerGap(371, Short.MAX_VALUE))
+            .addGap(0, 456, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Ordenes", jPanel4);
@@ -817,7 +798,6 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JDialog jd_modificar_empleados;
     private javax.swing.JDialog jd_modificar_material;
-    private javax.swing.JLabel jl_hora;
     private javax.swing.JComboBox<Object> lista_empleados;
     private javax.swing.JTextField marca_material;
     private javax.swing.JTextField marca_material_modificar;
@@ -830,8 +810,8 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JTextField serie_material;
     private javax.swing.JTextField serie_material_modificar;
     private javax.swing.JTable tabla_materiales;
-    private javax.swing.JLabel titulo_cronometro;
     // End of variables declaration//GEN-END:variables
+    AdministrarBarra Barra;
     Lista catalogo = new Lista();
     Lista inventario = new Lista();
     Cola_Empleados empleados = new Cola_Empleados();

@@ -785,6 +785,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/dtrump/13249521_10209521280339229_1155212027_n.png.jpeg"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="A&#xf1;adir al inventario"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -840,51 +841,15 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                      <Component id="titulo_cronometro" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                      <Component id="jl_hora" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="541" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="titulo_cronometro" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jl_hora" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="371" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="456" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="jl_hora">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Palatino Linotype" size="24" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="3a" green="1b" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="0"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="titulo_cronometro">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Palatino Linotype" size="24" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Tiempo total de operacion:"/>
-              </Properties>
-            </Component>
-          </SubComponents>
         </Container>
       </SubComponents>
     </Container>

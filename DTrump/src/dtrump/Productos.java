@@ -5,6 +5,8 @@
  */
 package dtrump;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author alexy
@@ -12,6 +14,8 @@ package dtrump;
 public class Productos {
     String nombre;
     String descripcion;
-    //tiempo
-    //lista de materiales
+    int tiempo;
+    ArrayList nombre_materiales = new ArrayList();
+    ArrayList marca = new ArrayList();
+    ArrayList<int> tiempo = new ArrayList();
 }

@@ -14,10 +14,8 @@ import javax.swing.JLabel;
  *
  * @author alexy
  */
-public class Hilo implements Runnable {
+public class Hilo implements Runnable{
     private JLabel hora;
-    private int secs = 0;
-    boolean Avanzar = true;
 
     public Hilo() {
     }
@@ -26,24 +24,17 @@ public class Hilo implements Runnable {
         this.hora = hora;
     }
     
-    public int getSecs(){
-        return secs;
-    }
-    
-    public void SetAvanzar(boolean Opcion){
-        Avanzar = Opcion;
-    }
-
     @Override
-    public void run() {
-        while (Avanzar) {
-            hora.setText(Integer.toString(secs));
-            secs++;
-
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
-
+    public void run(){
+        while(true){
+            Date h = new Date();
+            DateFormat f = new SimpleDateFormat("hh:mm:ss");
+            hora.setText(f.format(h));
+            
+            try{
+               Thread.sleep(1000);
+            } catch(InterruptedException ex){
+                
             }
         }
     }
