@@ -15,7 +15,7 @@ public class Productos {
     String nombre;
     String descripcion;
     int tiempo;
-    ArrayList nombre_materiales = new ArrayList();
-    ArrayList marca = new ArrayList();
-    ArrayList<int> tiempo = new ArrayList();
+    ArrayList<String> nombre_materiales = new ArrayList();
+    ArrayList<String> marca = new ArrayList();
+    ArrayList<Integer> cantidad = new ArrayList();
 }
