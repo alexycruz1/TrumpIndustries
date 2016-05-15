@@ -19,11 +19,10 @@ public class DTrump extends javax.swing.JFrame {
      */
     public DTrump() {
         initComponents();
-        
+
         //Hilo secs = new Hilo();
         //Thread proceso1 = new Thread(secs);
         //proceso1.start();
-        
         //Barra = new AdministrarBarra(Nombre_de_la_barra);
     }
 
@@ -444,17 +443,20 @@ public class DTrump extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        Empleados temp = (Empleados) lista_empleados.getSelectedItem();
-        nombre_empleado_m.setText(temp.getNombre());
-        id_empleado_m.setText(Integer.toString(temp.getID()));
-        edad_empleado_m.setText(Integer.toString(temp.getEdad()));
-        salario_empleado_m.setText(Integer.toString(temp.getSalario()));
-        direccion_empleado_m.setText(temp.getDireccion());
+        if (jButton2.isEnabled()) {
+            Empleados temp = (Empleados) lista_empleados.getSelectedItem();
+            nombre_empleado_m.setText(temp.getNombre());
+            id_empleado_m.setText(Integer.toString(temp.getID()));
+            edad_empleado_m.setText(Integer.toString(temp.getEdad()));
+            salario_empleado_m.setText(Integer.toString(temp.getSalario()));
+            direccion_empleado_m.setText(temp.getDireccion());
 
-        jd_modificar_empleados.setModal(true);
-        jd_modificar_empleados.pack();
-        jd_modificar_empleados.setLocationRelativeTo(this);
-        jd_modificar_empleados.setVisible(true);
+            jd_modificar_empleados.setModal(true);
+            jd_modificar_empleados.pack();
+            jd_modificar_empleados.setLocationRelativeTo(this);
+            jd_modificar_empleados.setVisible(true);
+        }
+
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void bt_modificar_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_modificar_materialMouseClicked
@@ -583,14 +585,14 @@ public class DTrump extends javax.swing.JFrame {
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
         if (jButton4.isEnabled()) {
-            Empleados temp1 = (Empleados)lista_empleados_temp.at(lista_empleados.getSelectedIndex());
+            Empleados temp1 = (Empleados) lista_empleados_temp.at(lista_empleados.getSelectedIndex());
 
             temp1.setNombre(nombre_empleado_m.getText());
             temp1.setID(Integer.parseInt(id_empleado_m.getText()));
             temp1.setEdad(Integer.parseInt(edad_empleado_m.getText()));
             temp1.setSalario(Integer.parseInt(salario_empleado_m.getText()));
             temp1.setDireccion(direccion_empleado_m.getText());
-            
+
             lista_empleados.removeAllItems();
 
             while (empleados.GetSize() != 0) {
