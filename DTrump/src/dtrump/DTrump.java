@@ -481,6 +481,11 @@ public class DTrump extends javax.swing.JFrame {
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/13249521_10209521280339229_1155212027_n.png.jpeg"))); // NOI18N
         jButton6.setToolTipText("Añadir al inventario");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
         jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 60, 30));
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
@@ -1230,6 +1235,11 @@ public class DTrump extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "No has agregado Materiales al producto");
         }
     }//GEN-LAST:event_jButton9MouseClicked
+
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        
+    }//GEN-LAST:event_jButton6MouseClicked
 
 
     /**
