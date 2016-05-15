@@ -119,11 +119,14 @@ public class DTrump extends javax.swing.JFrame {
         t_materiales_productos = new javax.swing.JTable();
         crear_producto = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        añadir_material = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         cb_productos = new javax.swing.JComboBox();
+        jLabel24 = new javax.swing.JLabel();
+        cantidad_materiales = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         pb_1 = new javax.swing.JProgressBar();
         jLabel32 = new javax.swing.JLabel();
@@ -390,7 +393,7 @@ public class DTrump extends javax.swing.JFrame {
         jPanel1.add(lista_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 261, -1));
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 460));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 460));
 
         jTabbedPane1.addTab("Empleados", jPanel1);
 
@@ -481,7 +484,7 @@ public class DTrump extends javax.swing.JFrame {
         jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 60, 30));
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
-        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 460));
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 460));
 
         jTabbedPane1.addTab("Materiales", jPanel2);
 
@@ -518,9 +521,19 @@ public class DTrump extends javax.swing.JFrame {
 
         jLabel31.setText("Crear Producto");
 
-        jButton8.setText("Añadir");
+        añadir_material.setText("Añadir");
+        añadir_material.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                añadir_materialMouseClicked(evt);
+            }
+        });
 
         jButton9.setText("Guardar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
 
         jButton16.setText("Modificar");
         jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -535,6 +548,10 @@ public class DTrump extends javax.swing.JFrame {
                 jButton17MouseClicked(evt);
             }
         });
+
+        jLabel24.setText("cantidad");
+
+        jLabel25.setText("Añadir Materiales Necesarios Para añadirlos al producto");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -555,7 +572,7 @@ public class DTrump extends javax.swing.JFrame {
                             .addComponent(tiempo_producto, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(152, Short.MAX_VALUE)
+                        .addContainerGap(232, Short.MAX_VALUE)
                         .addComponent(crear_producto)
                         .addGap(129, 129, 129)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -573,12 +590,18 @@ public class DTrump extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton8)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(262, Short.MAX_VALUE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addGap(18, 18, 18)
+                                .addComponent(cantidad_materiales, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(añadir_material)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel25))))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -608,12 +631,20 @@ public class DTrump extends javax.swing.JFrame {
                             .addComponent(jButton16)
                             .addComponent(jButton17))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(cantidad_materiales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton8)
-                .addGap(32, 32, 32)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(añadir_material)))
+                .addGap(52, 52, 52))
         );
 
         jTabbedPane1.addTab("Productos", jPanel3);
@@ -711,7 +742,7 @@ public class DTrump extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(238, 238, 238)
                         .addComponent(jLabel38)))
-                .addGap(0, 192, Short.MAX_VALUE))
+                .addGap(0, 272, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1173,6 +1204,34 @@ public class DTrump extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jPanel4MouseMoved
 
+                                               
+
+    private void añadir_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_añadir_materialMouseClicked
+        if (t_materiales_productos.getSelectedRow() >= 0) {
+            ((Productos) (productos.at(productos.size() - 1))).nombre_materiales.add(((Materiales) catalogo.at(tabla_materiales.getSelectedRow())).nombre);
+            ((Productos) (productos.at(productos.size() - 1))).marca.add(((Materiales) catalogo.at(tabla_materiales.getSelectedRow())).marca);
+            ((Productos) (productos.at(productos.size() - 1))).cantidad.add(Integer.parseInt(cantidad_materiales.getText()));
+            JOptionPane.showMessageDialog(this, "Se ha añadido un material a la lista de materiales necesarios de este producto");
+            cantidad_materiales.setText("");
+        }else{
+            JOptionPane.showMessageDialog(this, "No hay un Material seleccionado");
+        }
+    }//GEN-LAST:event_añadir_materialMouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        if (catalogo.size() > 0) {
+            nombre_producto.setText("");
+            descripcion_producto.setText("");
+            tiempo_producto.setText("");
+            cb_productos_ordenes.addItem(productos.at(productos.size()-1));
+            cb_productos.addItem(productos.at(productos.size()-1));
+            crear_producto.setEnabled(true);
+        }else{
+        JOptionPane.showMessageDialog(this, "No has agregado Materiales al producto");
+        }
+    }//GEN-LAST:event_jButton9MouseClicked
+
+
     /**
      * @param args the command line arguments
      */
@@ -1209,9 +1268,11 @@ public class DTrump extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton añadir_material;
     private javax.swing.JButton bt_agregar_material;
     private javax.swing.JButton bt_eliminar_material;
     private javax.swing.JButton bt_modificar_material;
+    private javax.swing.JTextField cantidad_materiales;
     private javax.swing.JComboBox cb_productos;
     private javax.swing.JComboBox<Object> cb_productos_ordenes;
     private javax.swing.JButton crear_producto;
@@ -1241,7 +1302,6 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1259,6 +1319,8 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
