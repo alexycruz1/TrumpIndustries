@@ -1112,7 +1112,6 @@ public class DTrump extends javax.swing.JFrame {
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
         // TODO add your handling code here:
-        cb_productos.removeItemAt(cb_productos.getSelectedIndex());
         productos.erase(cb_productos.getSelectedIndex());
         
         cb_productos_ordenes.removeAllItems();
