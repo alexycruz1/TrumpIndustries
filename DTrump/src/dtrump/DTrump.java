@@ -153,6 +153,7 @@ public class DTrump extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jLabel43 = new javax.swing.JLabel();
 
         jd_modificar_empleados.setTitle("MODIFICAR EMPLEADOS");
         jd_modificar_empleados.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -290,6 +291,7 @@ public class DTrump extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TRUMP TOWER ©");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setToolTipText("");
 
@@ -708,6 +710,8 @@ public class DTrump extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Ordenes", jPanel4);
 
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, 493));
+
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/exit.png"))); // NOI18N
         jButton5.setText("SALIR");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -715,29 +719,10 @@ public class DTrump extends javax.swing.JFrame {
                 jButton5MouseClicked(evt);
             }
         });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 511, -1, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton5))
-                    .addComponent(jTabbedPane1))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/fondo-madera-negro.jpg"))); // NOI18N
+        getContentPane().add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -3, 720, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1648,6 +1633,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
