@@ -1280,9 +1280,6 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JProgressBar" name="pb_1">
-              <Properties>
-                <Property name="maximum" type="int" value="10000000"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel32">
               <Properties>
@@ -1308,6 +1305,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear orden"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton11MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel34">
               <Properties>
@@ -1320,6 +1320,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear orden"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton12MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JProgressBar" name="pb_4">
             </Component>
@@ -1346,16 +1349,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear orden"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton13MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton14">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear orden"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton14MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton15">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear orden"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton15MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="cb_productos_ordenes">
               <Properties>

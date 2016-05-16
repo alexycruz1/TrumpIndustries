@@ -660,8 +660,6 @@ public class DTrump extends javax.swing.JFrame {
             }
         });
 
-        pb_1.setMaximum(10000000);
-
         jLabel32.setText("Empleado #1");
 
         jButton10.setText("Crear orden");
@@ -674,10 +672,20 @@ public class DTrump extends javax.swing.JFrame {
         jLabel33.setText("Empleado #2");
 
         jButton11.setText("Crear orden");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
 
         jLabel34.setText("Empleado #3");
 
         jButton12.setText("Crear orden");
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
 
         jLabel35.setText("Empleado #4");
 
@@ -686,10 +694,25 @@ public class DTrump extends javax.swing.JFrame {
         jLabel37.setText("Empleado #6");
 
         jButton13.setText("Crear orden");
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
 
         jButton14.setText("Crear orden");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
 
         jButton15.setText("Crear orden");
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
 
         jLabel38.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jLabel38.setText("Productos");
@@ -1109,6 +1132,8 @@ public class DTrump extends javax.swing.JFrame {
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         // TODO add your handling code here:
+        pb_1.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
+
         String nombre;
         int cont = 10;
 
@@ -1205,11 +1230,74 @@ public class DTrump extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Orden terminada con exito",
                         "ORDENES", JOptionPane.INFORMATION_MESSAGE);
             }
+        } else if (!Barra2.isVive()) {
+            jButton11.setEnabled(true);
+            Barra2.setValue();
+            Barra2.setVive(false);
+            if (empleados_en_ordenes.GetSize() != 0) {
+                Empleados agregar_de_nuevo_a_cola = (Empleados) empleados_en_ordenes.Peek();
+                empleados_en_ordenes.DeQueue();
+                empleados.Queue(agregar_de_nuevo_a_cola);
+                Barra2 = new AdministrarBarra(pb_2);
 
+                JOptionPane.showMessageDialog(this, "Orden terminada con exito",
+                        "ORDENES", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }else if(!Barra3.isVive()){
+            jButton12.setEnabled(true);
+            Barra3.setValue();
+            Barra3.setVive(false);
+            if (empleados_en_ordenes.GetSize() != 0) {
+                Empleados agregar_de_nuevo_a_cola = (Empleados) empleados_en_ordenes.Peek();
+                empleados_en_ordenes.DeQueue();
+                empleados.Queue(agregar_de_nuevo_a_cola);
+                Barra3 = new AdministrarBarra(pb_3);
+
+                JOptionPane.showMessageDialog(this, "Orden terminada con exito",
+                        "ORDENES", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }else if(!Barra4.isVive()){
+            jButton13.setEnabled(true);
+            Barra4.setValue();
+            Barra4.setVive(false);
+            if (empleados_en_ordenes.GetSize() != 0) {
+                Empleados agregar_de_nuevo_a_cola = (Empleados) empleados_en_ordenes.Peek();
+                empleados_en_ordenes.DeQueue();
+                empleados.Queue(agregar_de_nuevo_a_cola);
+                Barra4 = new AdministrarBarra(pb_4);
+
+                JOptionPane.showMessageDialog(this, "Orden terminada con exito",
+                        "ORDENES", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }else if(!Barra5.isVive()){
+            jButton14.setEnabled(true);
+            Barra5.setValue();
+            Barra5.setVive(false);
+            if (empleados_en_ordenes.GetSize() != 0) {
+                Empleados agregar_de_nuevo_a_cola = (Empleados) empleados_en_ordenes.Peek();
+                empleados_en_ordenes.DeQueue();
+                empleados.Queue(agregar_de_nuevo_a_cola);
+                Barra5 = new AdministrarBarra(pb_5);
+
+                JOptionPane.showMessageDialog(this, "Orden terminada con exito",
+                        "ORDENES", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }else if(!Barra5.isVive()){
+            jButton15.setEnabled(true);
+            Barra6.setValue();
+            Barra6.setVive(false);
+            if (empleados_en_ordenes.GetSize() != 0) {
+                Empleados agregar_de_nuevo_a_cola = (Empleados) empleados_en_ordenes.Peek();
+                empleados_en_ordenes.DeQueue();
+                empleados.Queue(agregar_de_nuevo_a_cola);
+                Barra6 = new AdministrarBarra(pb_6);
+
+                JOptionPane.showMessageDialog(this, "Orden terminada con exito",
+                        "ORDENES", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }//GEN-LAST:event_jPanel4MouseMoved
 
-                                               
 
     private void añadir_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_añadir_materialMouseClicked
         if (t_materiales_productos.getSelectedRow() >= 0) {
@@ -1218,9 +1306,10 @@ public class DTrump extends javax.swing.JFrame {
             ((Productos) (productos.at(productos.size() - 1))).cantidad.add(Integer.parseInt(cantidad_materiales.getText()));
             JOptionPane.showMessageDialog(this, "Se ha añadido un material a la lista de materiales necesarios de este producto");
             cantidad_materiales.setText("");
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "No hay un Material seleccionado");
         }
+
     }//GEN-LAST:event_añadir_materialMouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
@@ -1228,19 +1317,108 @@ public class DTrump extends javax.swing.JFrame {
             nombre_producto.setText("");
             descripcion_producto.setText("");
             tiempo_producto.setText("");
-            cb_productos_ordenes.addItem(productos.at(productos.size()-1));
-            cb_productos.addItem(productos.at(productos.size()-1));
+            cb_productos_ordenes.addItem(productos.at(productos.size() - 1));
+            cb_productos.addItem(productos.at(productos.size() - 1));
             crear_producto.setEnabled(true);
-        }else{
-        JOptionPane.showMessageDialog(this, "No has agregado Materiales al producto");
+        } else {
+            JOptionPane.showMessageDialog(this, "No has agregado Materiales al producto");
         }
     }//GEN-LAST:event_jButton9MouseClicked
 
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        
+
     }//GEN-LAST:event_jButton6MouseClicked
 
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        // TODO add your handling code here:
+        pb_2.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
+
+        String nombre;
+        int cont = 10;
+
+        Empleados empleado_temp = (Empleados) empleados.Peek();
+        jLabel33.setText(empleado_temp.getNombre());
+
+        Barra2.start();
+
+        empleados.DeQueue();
+        empleados_en_ordenes.Queue(empleado_temp);
+
+        jButton11.setEnabled(false);
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+        // TODO add your handling code here:
+        pb_3.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
+
+        String nombre;
+        int cont = 10;
+
+        Empleados empleado_temp = (Empleados) empleados.Peek();
+        jLabel34.setText(empleado_temp.getNombre());
+
+        Barra3.start();
+
+        empleados.DeQueue();
+        empleados_en_ordenes.Queue(empleado_temp);
+
+        jButton12.setEnabled(false);
+    }//GEN-LAST:event_jButton12MouseClicked
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        // TODO add your handling code here:
+        pb_4.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
+
+        String nombre;
+        int cont = 10;
+
+        Empleados empleado_temp = (Empleados) empleados.Peek();
+        jLabel35.setText(empleado_temp.getNombre());
+
+        Barra4.start();
+
+        empleados.DeQueue();
+        empleados_en_ordenes.Queue(empleado_temp);
+
+        jButton13.setEnabled(false);
+    }//GEN-LAST:event_jButton13MouseClicked
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+        // TODO add your handling code here:
+        pb_5.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
+
+        String nombre;
+        int cont = 10;
+
+        Empleados empleado_temp = (Empleados) empleados.Peek();
+        jLabel36.setText(empleado_temp.getNombre());
+
+        Barra5.start();
+
+        empleados.DeQueue();
+        empleados_en_ordenes.Queue(empleado_temp);
+
+        jButton14.setEnabled(false);
+    }//GEN-LAST:event_jButton14MouseClicked
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+        // TODO add your handling code here:
+        pb_6.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
+
+        String nombre;
+        int cont = 10;
+
+        Empleados empleado_temp = (Empleados) empleados.Peek();
+        jLabel37.setText(empleado_temp.getNombre());
+
+        Barra6.start();
+
+        empleados.DeQueue();
+        empleados_en_ordenes.Queue(empleado_temp);
+
+        jButton15.setEnabled(false);
+    }//GEN-LAST:event_jButton15MouseClicked
 
     /**
      * @param args the command line arguments
