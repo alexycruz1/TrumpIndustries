@@ -527,6 +527,7 @@ public class DTrump extends javax.swing.JFrame {
         jLabel31.setText("Crear Producto");
 
         añadir_material.setText("Añadir");
+        añadir_material.setEnabled(false);
         añadir_material.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 añadir_materialMouseClicked(evt);
@@ -1199,17 +1200,17 @@ public class DTrump extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17MouseClicked
 
     private void crear_productoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crear_productoMouseClicked
-        String nombre, descripcion;
-        int tiempo;
-        nombre = nombre_producto.getText();
-        descripcion = descripcion_producto.getText();
-        tiempo = Integer.parseInt(tiempo_producto.getText());
+        if (crear_producto.isEnabled()) {
+            String nombre, descripcion;
+            int tiempo;
+            nombre = nombre_producto.getText();
+            descripcion = descripcion_producto.getText();
+            tiempo = Integer.parseInt(tiempo_producto.getText());
 
-        productos.push_back(new Productos(nombre, descripcion, tiempo));
-
-        nombre_producto.setText("");
-        descripcion_producto.setText("");
-        tiempo_producto.setText("");
+            productos.push_back(new Productos(nombre, descripcion, tiempo));
+            crear_producto.setEnabled(false);
+            añadir_material.setEnabled(true);
+        }
     }//GEN-LAST:event_crear_productoMouseClicked
 
     private void jPanel4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseMoved
@@ -1240,7 +1241,7 @@ public class DTrump extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Orden terminada con exito",
                         "ORDENES", JOptionPane.INFORMATION_MESSAGE);
             }
-        }else if(!Barra3.isVive()){
+        } else if (!Barra3.isVive()) {
             jButton12.setEnabled(true);
             Barra3.setValue();
             Barra3.setVive(false);
@@ -1253,7 +1254,7 @@ public class DTrump extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Orden terminada con exito",
                         "ORDENES", JOptionPane.INFORMATION_MESSAGE);
             }
-        }else if(!Barra4.isVive()){
+        } else if (!Barra4.isVive()) {
             jButton13.setEnabled(true);
             Barra4.setValue();
             Barra4.setVive(false);
@@ -1266,7 +1267,7 @@ public class DTrump extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Orden terminada con exito",
                         "ORDENES", JOptionPane.INFORMATION_MESSAGE);
             }
-        }else if(!Barra5.isVive()){
+        } else if (!Barra5.isVive()) {
             jButton14.setEnabled(true);
             Barra5.setValue();
             Barra5.setVive(false);
@@ -1279,7 +1280,7 @@ public class DTrump extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Orden terminada con exito",
                         "ORDENES", JOptionPane.INFORMATION_MESSAGE);
             }
-        }else if(!Barra5.isVive()){
+        } else if (!Barra5.isVive()) {
             jButton15.setEnabled(true);
             Barra6.setValue();
             Barra6.setVive(false);
@@ -1297,14 +1298,18 @@ public class DTrump extends javax.swing.JFrame {
 
 
     private void añadir_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_añadir_materialMouseClicked
-        if (t_materiales_productos.getSelectedRow() >= 0) {
-            ((Productos) (productos.at(productos.size() - 1))).nombre_materiales.add(((Materiales) catalogo.at(tabla_materiales.getSelectedRow())).nombre);
-            ((Productos) (productos.at(productos.size() - 1))).marca.add(((Materiales) catalogo.at(tabla_materiales.getSelectedRow())).marca);
-            ((Productos) (productos.at(productos.size() - 1))).cantidad.add(Integer.parseInt(cantidad_materiales.getText()));
-            JOptionPane.showMessageDialog(this, "Se ha añadido un material a la lista de materiales necesarios de este producto");
-            cantidad_materiales.setText("");
+        if (añadir_material.isEnabled()) {
+            if (t_materiales_productos.getSelectedRow() >= 0) {
+                ((Productos) (productos.at(productos.size() - 1))).nombre_materiales.add(((Materiales) catalogo.at(tabla_materiales.getSelectedRow())).nombre);
+                ((Productos) (productos.at(productos.size() - 1))).marca.add(((Materiales) catalogo.at(tabla_materiales.getSelectedRow())).marca);
+                ((Productos) (productos.at(productos.size() - 1))).cantidad.add(Integer.parseInt(cantidad_materiales.getText()));
+                JOptionPane.showMessageDialog(this, "Se ha añadido un material a la lista de materiales necesarios de este producto");
+                cantidad_materiales.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay un Material seleccionado");
+            }
         } else {
-            JOptionPane.showMessageDialog(this, "No hay un Material seleccionado");
+            JOptionPane.showMessageDialog(this, "Tienes que crear primero el producto");
         }
 
     }//GEN-LAST:event_añadir_materialMouseClicked
@@ -1316,6 +1321,9 @@ public class DTrump extends javax.swing.JFrame {
             tiempo_producto.setText("");
             cb_productos_ordenes.addItem(productos.at(productos.size() - 1));
             cb_productos.addItem(productos.at(productos.size() - 1));
+            nombre_producto.setText("");
+            descripcion_producto.setText("");
+            tiempo_producto.setText("");
             crear_producto.setEnabled(true);
         } else {
             JOptionPane.showMessageDialog(this, "No has agregado Materiales al producto");
@@ -1325,7 +1333,7 @@ public class DTrump extends javax.swing.JFrame {
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
         if (tabla_materiales.getSelectedRow() >= 0) {
-            ((Pila)inventario.at(tabla_materiales.getSelectedRow())).push((Materiales)catalogo.at(tabla_materiales.getSelectedRow()-1));
+            ((Pila) inventario.at(tabla_materiales.getSelectedRow())).push((Materiales) catalogo.at(tabla_materiales.getSelectedRow() - 1));
             JOptionPane.showMessageDialog(this, "Se ha agregado el material seleccionado al inventario");
         }
     }//GEN-LAST:event_jButton6MouseClicked

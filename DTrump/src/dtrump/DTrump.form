@@ -1086,6 +1086,7 @@
             <Component class="javax.swing.JButton" name="a&#xf1;adir_material">
               <Properties>
                 <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="a&#xf1;adir_materialMouseClicked"/>
