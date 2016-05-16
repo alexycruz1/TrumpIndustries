@@ -19,7 +19,8 @@ public class DTrump extends javax.swing.JFrame {
      */
     public DTrump() {
         initComponents();
-
+        
+        this.setLocationRelativeTo(this);
         //Hilo secs = new Hilo();
         //Thread proceso1 = new Thread(secs);
         //proceso1.start();
@@ -73,6 +74,7 @@ public class DTrump extends javax.swing.JFrame {
         nombre_producto_m = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
+        jLabel42 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -127,6 +129,7 @@ public class DTrump extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         cantidad_materiales = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         pb_1 = new javax.swing.JProgressBar();
         jLabel32 = new javax.swing.JLabel();
@@ -146,8 +149,9 @@ public class DTrump extends javax.swing.JFrame {
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
-        cb_productos_ordenes = new javax.swing.JComboBox<Object>();
+        cb_productos_ordenes = new javax.swing.JComboBox<>();
         jLabel38 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
 
         jd_modificar_empleados.setTitle("MODIFICAR EMPLEADOS");
@@ -205,6 +209,7 @@ public class DTrump extends javax.swing.JFrame {
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
         jd_modificar_empleados.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 460));
 
+        jd_modificar_material.setTitle("MODIFICAR MATERIALES");
         jd_modificar_material.setResizable(false);
         jd_modificar_material.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -249,60 +254,38 @@ public class DTrump extends javax.swing.JFrame {
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
         jd_modificar_material.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 400));
 
+        jd_modificar_producto.setTitle("MODIFICAR PRODUCTOS");
+        jd_modificar_producto.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jd_modificar_producto.getContentPane().add(tiempo_producto_m, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 143, 131, -1));
+
+        jLabel30.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(254, 254, 254));
         jLabel30.setText("Tiempo");
+        jd_modificar_producto.getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 148, -1, -1));
 
+        jLabel39.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(254, 254, 254));
         jLabel39.setText("Descripcion");
+        jd_modificar_producto.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 97, -1, -1));
+        jd_modificar_producto.getContentPane().add(descripcion_producto_m, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 92, 131, -1));
+        jd_modificar_producto.getContentPane().add(nombre_producto_m, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 48, 131, -1));
 
+        jLabel40.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(254, 254, 254));
         jLabel40.setText("Nombre");
+        jd_modificar_producto.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 53, -1, -1));
 
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/edit.png"))); // NOI18N
         jButton7.setText("Modificar");
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton7MouseClicked(evt);
             }
         });
+        jd_modificar_producto.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 125, 40));
 
-        javax.swing.GroupLayout jd_modificar_productoLayout = new javax.swing.GroupLayout(jd_modificar_producto.getContentPane());
-        jd_modificar_producto.getContentPane().setLayout(jd_modificar_productoLayout);
-        jd_modificar_productoLayout.setHorizontalGroup(
-            jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_modificar_productoLayout.createSequentialGroup()
-                .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_modificar_productoLayout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(27, 27, 27)
-                        .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nombre_producto_m)
-                            .addComponent(descripcion_producto_m)
-                            .addComponent(tiempo_producto_m, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jd_modificar_productoLayout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
-        jd_modificar_productoLayout.setVerticalGroup(
-            jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_modificar_productoLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40)
-                    .addComponent(nombre_producto_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel39)
-                    .addComponent(descripcion_producto_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jd_modificar_productoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
-                    .addComponent(tiempo_producto_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(103, Short.MAX_VALUE))
-        );
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
+        jd_modificar_producto.getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 360));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TRUMP TOWER ©");
@@ -493,11 +476,25 @@ public class DTrump extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Materiales", jPanel2);
 
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel27.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(254, 254, 254));
         jLabel27.setText("Nombre");
+        jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 49, -1, -1));
 
+        jLabel28.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(254, 254, 254));
         jLabel28.setText("Descripcion");
+        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 93, -1, -1));
 
+        jLabel29.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(254, 254, 254));
         jLabel29.setText("Tiempo");
+        jPanel3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 144, -1, -1));
+        jPanel3.add(nombre_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 44, 131, -1));
+        jPanel3.add(descripcion_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 88, 131, -1));
+        jPanel3.add(tiempo_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 139, 131, -1));
 
         t_materiales_productos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -517,7 +514,10 @@ public class DTrump extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(t_materiales_productos);
 
-        crear_producto.setText("Crear");
+        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 308, 94));
+
+        crear_producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/index.png"))); // NOI18N
+        crear_producto.setToolTipText("Crear producto");
         crear_producto.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 crear_productoMouseMoved(evt);
@@ -528,135 +528,74 @@ public class DTrump extends javax.swing.JFrame {
                 crear_productoMouseClicked(evt);
             }
         });
+        jPanel3.add(crear_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 172, -1, -1));
 
+        jLabel31.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(254, 254, 254));
         jLabel31.setText("Crear Producto");
+        jPanel3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 12, -1, -1));
 
-        añadir_material.setText("Añadir");
+        añadir_material.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/13249521_10209521280339229_1155212027_n.png.jpeg"))); // NOI18N
+        añadir_material.setToolTipText("Añadir materiales al producto");
         añadir_material.setEnabled(false);
         añadir_material.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 añadir_materialMouseClicked(evt);
             }
         });
+        jPanel3.add(añadir_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 60, 40));
 
-        jButton9.setText("Guardar");
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/images.jpeg"))); // NOI18N
+        jButton9.setText("Guardar producto");
         jButton9.setEnabled(false);
         jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton9MouseClicked(evt);
             }
         });
+        jPanel3.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, 190, 50));
 
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/edit.png"))); // NOI18N
         jButton16.setText("Modificar");
+        jButton16.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jButton16MouseMoved(evt);
+            }
+        });
         jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton16MouseClicked(evt);
             }
         });
+        jPanel3.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
 
+        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/icon_delete.png"))); // NOI18N
         jButton17.setText("Eliminar");
+        jButton17.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jButton17MouseMoved(evt);
+            }
+        });
         jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton17MouseClicked(evt);
             }
         });
+        jPanel3.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, -1, -1));
 
+        jPanel3.add(cb_productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 280, -1));
+
+        jLabel24.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(254, 254, 254));
         jLabel24.setText("cantidad");
+        jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, -1, -1));
+        jPanel3.add(cantidad_materiales, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 41, -1));
 
-        jLabel25.setText("Añadir Materiales Necesarios Para añadirlos al producto");
+        jLabel25.setText("Añadir Materiales al producto");
+        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel28)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nombre_producto)
-                            .addComponent(descripcion_producto)
-                            .addComponent(tiempo_producto, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(crear_producto)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton16)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton17))
-                    .addComponent(cb_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(75, 75, 75))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(jLabel31))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel24)
-                                .addGap(18, 18, 18)
-                                .addComponent(cantidad_materiales, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(añadir_material)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel25))))
-                .addContainerGap(267, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel31)
-                .addGap(15, 15, 15)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel27)
-                            .addComponent(nombre_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel28)
-                            .addComponent(descripcion_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cb_productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel29)
-                            .addComponent(tiempo_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(crear_producto))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton16)
-                            .addComponent(jButton17))))
-                .addGap(11, 11, 11)
-                .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(cantidad_materiales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(añadir_material)))
-                .addGap(52, 52, 52))
-        );
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
+        jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 460));
 
         jTabbedPane1.addTab("Productos", jPanel3);
 
@@ -665,167 +604,111 @@ public class DTrump extends javax.swing.JFrame {
                 jPanel4MouseMoved(evt);
             }
         });
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.add(pb_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 120, -1, -1));
 
+        jLabel32.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(254, 254, 254));
         jLabel32.setText("Empleado #1");
+        jPanel4.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 91, -1, -1));
 
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/gears.png"))); // NOI18N
         jButton10.setText("Crear orden");
         jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton10MouseClicked(evt);
             }
         });
+        jPanel4.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 140, 30));
+        jPanel4.add(pb_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 251, -1, -1));
 
+        jLabel33.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(254, 254, 254));
         jLabel33.setText("Empleado #2");
+        jPanel4.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 222, -1, -1));
 
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/gears.png"))); // NOI18N
         jButton11.setText("Crear orden");
         jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton11MouseClicked(evt);
             }
         });
+        jPanel4.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, 30));
 
+        jLabel34.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(254, 254, 254));
         jLabel34.setText("Empleado #3");
+        jPanel4.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 358, -1, -1));
+        jPanel4.add(pb_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 381, -1, -1));
 
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/gears.png"))); // NOI18N
         jButton12.setText("Crear orden");
         jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton12MouseClicked(evt);
             }
         });
+        jPanel4.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, 30));
+        jPanel4.add(pb_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 120, -1, -1));
+        jPanel4.add(pb_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 251, -1, -1));
+        jPanel4.add(pb_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 381, -1, -1));
 
+        jLabel35.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(254, 254, 254));
         jLabel35.setText("Empleado #4");
+        jPanel4.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 91, -1, -1));
 
+        jLabel36.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(254, 254, 254));
         jLabel36.setText("Empleado #5");
+        jPanel4.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 222, -1, -1));
 
+        jLabel37.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(254, 254, 254));
         jLabel37.setText("Empleado #6");
+        jPanel4.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 358, -1, -1));
 
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/gears.png"))); // NOI18N
         jButton13.setText("Crear orden");
         jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton13MouseClicked(evt);
             }
         });
+        jPanel4.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, -1, 30));
 
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/gears.png"))); // NOI18N
         jButton14.setText("Crear orden");
         jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton14MouseClicked(evt);
             }
         });
+        jPanel4.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, -1, 30));
 
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/gears.png"))); // NOI18N
         jButton15.setText("Crear orden");
         jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton15MouseClicked(evt);
             }
         });
+        jPanel4.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, -1, 30));
 
-        jLabel38.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jPanel4.add(cb_productos_ordenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 46, 247, -1));
+
+        jLabel38.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(254, 254, 254));
         jLabel38.setText("Productos");
+        jPanel4.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 22, -1, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pb_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pb_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pb_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jButton11))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jButton12))
-                    .addComponent(jLabel32)
-                    .addComponent(jLabel33)
-                    .addComponent(jLabel34))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pb_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pb_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pb_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton13)
-                        .addGap(77, 77, 77))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton14)
-                        .addGap(80, 80, 80))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton15)
-                        .addGap(83, 83, 83))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel35)
-                            .addComponent(jLabel36)
-                            .addComponent(jLabel37))
-                        .addContainerGap())))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(cb_productos_ordenes, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(238, 238, 238)
-                        .addComponent(jLabel38)))
-                .addGap(0, 272, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(jLabel38)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cb_productos_ordenes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(jLabel35))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pb_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pb_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton10)
-                    .addComponent(jButton13))
-                .addGap(47, 47, 47)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel33)
-                    .addComponent(jLabel36))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pb_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pb_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton11)
-                    .addComponent(jButton14))
-                .addGap(52, 52, 52)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel37)
-                    .addComponent(jLabel34))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pb_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pb_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton15)
-                    .addComponent(jButton12))
-                .addGap(20, 20, 20))
-        );
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/Trump.jpg"))); // NOI18N
+        jPanel4.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 460));
 
         jTabbedPane1.addTab("Ordenes", jPanel4);
 
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dtrump/exit.png"))); // NOI18N
         jButton5.setText("SALIR");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -837,23 +720,23 @@ public class DTrump extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton5)))
+                        .addComponent(jButton5))
+                    .addComponent(jTabbedPane1))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -1624,6 +1507,24 @@ public class DTrump extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_crear_productoMouseMoved
 
+    private void jButton16MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseMoved
+        // TODO add your handling code here:
+        if (cb_productos.getItemCount() == 0) {
+            jButton16.setEnabled(false);
+        }else{
+            jButton16.setEnabled(true);
+        }
+    }//GEN-LAST:event_jButton16MouseMoved
+
+    private void jButton17MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseMoved
+        // TODO add your handling code here:
+        if (cb_productos.getItemCount() == 0) {
+            jButton17.setEnabled(false);
+        }else{
+            jButton17.setEnabled(true);
+        }
+    }//GEN-LAST:event_jButton17MouseMoved
+
     /**
      * @param args the command line arguments
      */
@@ -1713,6 +1614,7 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -1729,6 +1631,8 @@ public class DTrump extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
