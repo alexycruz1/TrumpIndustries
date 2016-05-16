@@ -146,7 +146,7 @@ public class DTrump extends javax.swing.JFrame {
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
-        cb_productos_ordenes = new javax.swing.JComboBox<>();
+        cb_productos_ordenes = new javax.swing.JComboBox<Object>();
         jLabel38 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
 
@@ -574,12 +574,11 @@ public class DTrump extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nombre_producto)
                             .addComponent(descripcion_producto)
-                            .addComponent(tiempo_producto, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(232, Short.MAX_VALUE)
-                        .addComponent(crear_producto)
-                        .addGap(129, 129, 129)))
+                            .addComponent(tiempo_producto, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(crear_producto)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton16)
@@ -628,14 +627,14 @@ public class DTrump extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel29)
                             .addComponent(tiempo_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                         .addComponent(crear_producto))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(105, 105, 105)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton16)
                             .addComponent(jButton17))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(11, 11, 11)
                 .addComponent(jLabel25)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1207,8 +1206,6 @@ public class DTrump extends javax.swing.JFrame {
         tiempo = Integer.parseInt(tiempo_producto.getText());
 
         productos.push_back(new Productos(nombre, descripcion, tiempo));
-        cb_productos_ordenes.addItem(new Productos(nombre, descripcion, tiempo));
-        cb_productos.addItem(new Productos(nombre, descripcion, tiempo));
 
         nombre_producto.setText("");
         descripcion_producto.setText("");
@@ -1327,7 +1324,10 @@ public class DTrump extends javax.swing.JFrame {
 
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-
+        if (tabla_materiales.getSelectedRow() >= 0) {
+            ((Pila)inventario.at(tabla_materiales.getSelectedRow())).push((Materiales)catalogo.at(tabla_materiales.getSelectedRow()-1));
+            JOptionPane.showMessageDialog(this, "Se ha agregado el material seleccionado al inventario");
+        }
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
