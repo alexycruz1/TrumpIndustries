@@ -19,7 +19,7 @@ public class DTrump extends javax.swing.JFrame {
      */
     public DTrump() {
         initComponents();
-        
+
         this.setLocationRelativeTo(this);
         //Hilo secs = new Hilo();
         //Thread proceso1 = new Thread(secs);
@@ -1132,6 +1132,22 @@ public class DTrump extends javax.swing.JFrame {
 
     private void jPanel4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseMoved
         // TODO add your handling code here:
+        if (cb_productos_ordenes.getItemCount() == 0) {
+            jButton10.setEnabled(false);
+            jButton11.setEnabled(false);
+            jButton12.setEnabled(false);
+            jButton13.setEnabled(false);
+            jButton14.setEnabled(false);
+            jButton15.setEnabled(false);
+        } else {
+            jButton10.setEnabled(true);
+            jButton11.setEnabled(true);
+            jButton12.setEnabled(true);
+            jButton13.setEnabled(true);
+            jButton14.setEnabled(true);
+            jButton15.setEnabled(true);
+        }
+
         if (!Barra1.isVive()) {
             jButton10.setEnabled(true);
             Barra1.setValue();
@@ -1228,7 +1244,7 @@ public class DTrump extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Tienes que crear primero el producto");
         }
-        
+
 
     }//GEN-LAST:event_añadir_materialMouseClicked
 
@@ -1249,7 +1265,7 @@ public class DTrump extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "No has agregado Materiales al producto");
             }
-            
+
         }
     }//GEN-LAST:event_jButton9MouseClicked
 
@@ -1258,7 +1274,6 @@ public class DTrump extends javax.swing.JFrame {
         if (tabla_materiales.getSelectedRow() >= 0) {
             ((Pila) inventario.at(tabla_materiales.getSelectedRow())).push((Materiales) catalogo.at(tabla_materiales.getSelectedRow() - 1));
             JOptionPane.showMessageDialog(this, "Se ha agregado el material seleccionado al inventario");
-            System.out.println(((Pila) inventario.at(tabla_materiales.getSelectedRow())).getSize());
         }
     }//GEN-LAST:event_jButton6MouseClicked
 
@@ -1499,7 +1514,7 @@ public class DTrump extends javax.swing.JFrame {
 
     private void crear_productoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crear_productoMouseMoved
         if ((nombre_producto.getText()).equals("") || (descripcion_producto.getText()).equals("")
-                || (tiempo_producto.getText()).equals("") ) {
+                || (tiempo_producto.getText()).equals("")) {
 
             crear_producto.setEnabled(false);
         } else {
@@ -1511,7 +1526,7 @@ public class DTrump extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (cb_productos.getItemCount() == 0) {
             jButton16.setEnabled(false);
-        }else{
+        } else {
             jButton16.setEnabled(true);
         }
     }//GEN-LAST:event_jButton16MouseMoved
@@ -1520,7 +1535,7 @@ public class DTrump extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (cb_productos.getItemCount() == 0) {
             jButton17.setEnabled(false);
-        }else{
+        } else {
             jButton17.setEnabled(true);
         }
     }//GEN-LAST:event_jButton17MouseMoved
