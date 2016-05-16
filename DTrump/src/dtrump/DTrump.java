@@ -1132,20 +1132,47 @@ public class DTrump extends javax.swing.JFrame {
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         // TODO add your handling code here:
+        Productos temp = (Productos) cb_productos_ordenes.getSelectedItem();
+
         pb_1.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
+        boolean sePuede = false;
+        Lista eliminados = new Lista();
+        int cont2 = 0;
+        for (int i = 0; i < temp.cantidad.size(); i++) {
+            String nombre_temp = temp.nombre_materiales.get(i), marca_temp = temp.marca.get(i);
+            int cantidad_temp = temp.cantidad.get(i);
+            for (int j = 0; j < catalogo.size(); j++) {
+                if ((((Materiales) catalogo.at(j)).nombre).equals(nombre_temp) && (((Materiales) catalogo.at(j)).marca).equals(marca_temp)) {
 
-        String nombre;
-        int cont = 10;
+                    if (cantidad_temp <= ((Pila) inventario.at(i)).getSize()) {
+                        cont2++;
+                        eliminados.push_back(j);
+                    }
+                }
+            }
+        }
+        if (cont2 == temp.cantidad.size()) {
+            sePuede = true;
+        }
+        if (sePuede) {
+            for (int i = 0; i < eliminados.size(); i++) {
+                Pila pila_eliminar = (Pila) inventario.at(i);
+                for (int j = 0; j < pila_eliminar.getSize(); j++) {
+                    pila_eliminar.pop();
+                }
+            }
+            Empleados empleado_temp = (Empleados) empleados.Peek();
+            jLabel32.setText(empleado_temp.getNombre());
 
-        Empleados empleado_temp = (Empleados) empleados.Peek();
-        jLabel32.setText(empleado_temp.getNombre());
+            Barra1.start();
 
-        Barra1.start();
+            empleados.DeQueue();
+            empleados_en_ordenes.Queue(empleado_temp);
 
-        empleados.DeQueue();
-        empleados_en_ordenes.Queue(empleado_temp);
-
-        jButton10.setEnabled(false);
+            jButton10.setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay Suficientes Materiales");
+        }
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
@@ -1280,7 +1307,7 @@ public class DTrump extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Orden terminada con exito",
                         "ORDENES", JOptionPane.INFORMATION_MESSAGE);
             }
-        } else if (!Barra5.isVive()) {
+        } else if (!Barra6.isVive()) {
             jButton15.setEnabled(true);
             Barra6.setValue();
             Barra6.setVive(false);
@@ -1335,6 +1362,7 @@ public class DTrump extends javax.swing.JFrame {
         if (tabla_materiales.getSelectedRow() >= 0) {
             ((Pila) inventario.at(tabla_materiales.getSelectedRow())).push((Materiales) catalogo.at(tabla_materiales.getSelectedRow() - 1));
             JOptionPane.showMessageDialog(this, "Se ha agregado el material seleccionado al inventario");
+            System.out.println(((Pila) inventario.at(tabla_materiales.getSelectedRow())).getSize());
         }
     }//GEN-LAST:event_jButton6MouseClicked
 
@@ -1342,90 +1370,235 @@ public class DTrump extends javax.swing.JFrame {
         // TODO add your handling code here:
         pb_2.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
 
-        String nombre;
+        Productos temp = (Productos) cb_productos_ordenes.getSelectedItem();
         int cont = 10;
+        boolean sePuede = false;
+        Lista eliminados = new Lista();
+        int cont2 = 0;
+        for (int i = 0; i < temp.cantidad.size(); i++) {
+            String nombre_temp = temp.nombre_materiales.get(i), marca_temp = temp.marca.get(i);
+            int cantidad_temp = temp.cantidad.get(i);
+            for (int j = 0; j < catalogo.size(); j++) {
+                if ((((Materiales) catalogo.at(j)).nombre).equals(nombre_temp) && (((Materiales) catalogo.at(j)).marca).equals(marca_temp)) {
 
-        Empleados empleado_temp = (Empleados) empleados.Peek();
-        jLabel33.setText(empleado_temp.getNombre());
+                    if (cantidad_temp <= ((Pila) inventario.at(i)).getSize()) {
+                        cont2++;
+                        eliminados.push_back(j);
+                    }
+                }
+            }
+        }
+        if (cont2 == temp.cantidad.size()) {
+            sePuede = true;
+        }
+        if (sePuede) {
+            for (int i = 0; i < eliminados.size(); i++) {
+                Pila pila_eliminar = (Pila) inventario.at(i);
+                for (int j = 0; j < pila_eliminar.getSize(); j++) {
+                    pila_eliminar.pop();
+                }
+            }
+            Empleados empleado_temp = (Empleados) empleados.Peek();
+            jLabel33.setText(empleado_temp.getNombre());
 
-        Barra2.start();
+            Barra2.start();
 
-        empleados.DeQueue();
-        empleados_en_ordenes.Queue(empleado_temp);
+            empleados.DeQueue();
+            empleados_en_ordenes.Queue(empleado_temp);
 
-        jButton11.setEnabled(false);
+            jButton11.setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay suficientes Materiales");
+        }
     }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
         // TODO add your handling code here:
         pb_3.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
 
-        String nombre;
+        Productos temp = (Productos) cb_productos_ordenes.getSelectedItem();
         int cont = 10;
+        boolean sePuede = false;
+        Lista eliminados = new Lista();
+        int cont2 = 0;
+        for (int i = 0; i < temp.cantidad.size(); i++) {
+            String nombre_temp = temp.nombre_materiales.get(i), marca_temp = temp.marca.get(i);
+            int cantidad_temp = temp.cantidad.get(i);
+            for (int j = 0; j < catalogo.size(); j++) {
+                if ((((Materiales) catalogo.at(j)).nombre).equals(nombre_temp) && (((Materiales) catalogo.at(j)).marca).equals(marca_temp)) {
 
-        Empleados empleado_temp = (Empleados) empleados.Peek();
-        jLabel34.setText(empleado_temp.getNombre());
+                    if (cantidad_temp <= ((Pila) inventario.at(i)).getSize()) {
+                        cont2++;
+                        eliminados.push_back(j);
+                    }
+                }
+            }
+        }
+        if (cont2 == temp.cantidad.size()) {
+            sePuede = true;
+        }
+        if (sePuede) {
+            for (int i = 0; i < eliminados.size(); i++) {
+                Pila pila_eliminar = (Pila) inventario.at(i);
+                for (int j = 0; j < pila_eliminar.getSize(); j++) {
+                    pila_eliminar.pop();
+                }
+            }
 
-        Barra3.start();
+            Empleados empleado_temp = (Empleados) empleados.Peek();
+            jLabel34.setText(empleado_temp.getNombre());
 
-        empleados.DeQueue();
-        empleados_en_ordenes.Queue(empleado_temp);
+            Barra3.start();
 
-        jButton12.setEnabled(false);
+            empleados.DeQueue();
+            empleados_en_ordenes.Queue(empleado_temp);
+
+            jButton12.setEnabled(false);
+        }else{
+            JOptionPane.showMessageDialog(this, "No hay suficientes Materiales");
+        }
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
         // TODO add your handling code here:
         pb_4.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
 
-        String nombre;
+        Productos temp = (Productos) cb_productos_ordenes.getSelectedItem();
         int cont = 10;
+        boolean sePuede = false;
+        Lista eliminados = new Lista();
+        int cont2 = 0;
+        for (int i = 0; i < temp.cantidad.size(); i++) {
+            String nombre_temp = temp.nombre_materiales.get(i), marca_temp = temp.marca.get(i);
+            int cantidad_temp = temp.cantidad.get(i);
+            for (int j = 0; j < catalogo.size(); j++) {
+                if ((((Materiales) catalogo.at(j)).nombre).equals(nombre_temp) && (((Materiales) catalogo.at(j)).marca).equals(marca_temp)) {
 
-        Empleados empleado_temp = (Empleados) empleados.Peek();
-        jLabel35.setText(empleado_temp.getNombre());
+                    if (cantidad_temp <= ((Pila) inventario.at(i)).getSize()) {
+                        cont2++;
+                        eliminados.push_back(j);
+                    }
+                }
+            }
+        }
+        if (cont2 == temp.cantidad.size()) {
+            sePuede = true;
+        }
+        if (sePuede) {
+            for (int i = 0; i < eliminados.size(); i++) {
+                Pila pila_eliminar = (Pila) inventario.at(i);
+                for (int j = 0; j < pila_eliminar.getSize(); j++) {
+                    pila_eliminar.pop();
+                }
+            }
 
-        Barra4.start();
+            Empleados empleado_temp = (Empleados) empleados.Peek();
+            jLabel35.setText(empleado_temp.getNombre());
 
-        empleados.DeQueue();
-        empleados_en_ordenes.Queue(empleado_temp);
+            Barra4.start();
 
-        jButton13.setEnabled(false);
+            empleados.DeQueue();
+            empleados_en_ordenes.Queue(empleado_temp);
+
+            jButton13.setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay Suficientes Materiales");
+        }
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
         // TODO add your handling code here:
         pb_5.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
 
-        String nombre;
+        Productos temp = (Productos) cb_productos_ordenes.getSelectedItem();
         int cont = 10;
+        boolean sePuede = false;
+        Lista eliminados = new Lista();
+        int cont2 = 0;
+        for (int i = 0; i < temp.cantidad.size(); i++) {
+            String nombre_temp = temp.nombre_materiales.get(i), marca_temp = temp.marca.get(i);
+            int cantidad_temp = temp.cantidad.get(i);
+            for (int j = 0; j < catalogo.size(); j++) {
+                if ((((Materiales) catalogo.at(j)).nombre).equals(nombre_temp) && (((Materiales) catalogo.at(j)).marca).equals(marca_temp)) {
 
-        Empleados empleado_temp = (Empleados) empleados.Peek();
-        jLabel36.setText(empleado_temp.getNombre());
+                    if (cantidad_temp <= ((Pila) inventario.at(i)).getSize()) {
+                        cont2++;
+                        eliminados.push_back(j);
+                    }
+                }
+            }
+        }
+        if (cont2 == temp.cantidad.size()) {
+            sePuede = true;
+        }
+        if (sePuede) {
+            for (int i = 0; i < eliminados.size(); i++) {
+                Pila pila_eliminar = (Pila) inventario.at(i);
+                for (int j = 0; j < pila_eliminar.getSize(); j++) {
+                    pila_eliminar.pop();
+                }
+            }
 
-        Barra5.start();
+            Empleados empleado_temp = (Empleados) empleados.Peek();
+            jLabel36.setText(empleado_temp.getNombre());
 
-        empleados.DeQueue();
-        empleados_en_ordenes.Queue(empleado_temp);
+            Barra5.start();
 
-        jButton14.setEnabled(false);
+            empleados.DeQueue();
+            empleados_en_ordenes.Queue(empleado_temp);
+
+            jButton14.setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay suficientes materiales");
+        }
     }//GEN-LAST:event_jButton14MouseClicked
 
     private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
         // TODO add your handling code here:
         pb_6.setMaximum((((Productos) cb_productos_ordenes.getSelectedItem()).getTiempo()) * 1000000);
 
-        String nombre;
+        Productos temp = (Productos) cb_productos_ordenes.getSelectedItem();
         int cont = 10;
+        boolean sePuede = false;
+        Lista eliminados = new Lista();
+        int cont2 = 0;
+        for (int i = 0; i < temp.cantidad.size(); i++) {
+            String nombre_temp = temp.nombre_materiales.get(i), marca_temp = temp.marca.get(i);
+            int cantidad_temp = temp.cantidad.get(i);
+            for (int j = 0; j < catalogo.size(); j++) {
+                if ((((Materiales) catalogo.at(j)).nombre).equals(nombre_temp) && (((Materiales) catalogo.at(j)).marca).equals(marca_temp)) {
 
-        Empleados empleado_temp = (Empleados) empleados.Peek();
-        jLabel37.setText(empleado_temp.getNombre());
+                    if (cantidad_temp <= ((Pila) inventario.at(i)).getSize()) {
+                        cont2++;
+                        eliminados.push_back(j);
+                    }
+                }
+            }
+        }
+        if (cont2 == temp.cantidad.size()) {
+            sePuede = true;
+        }
+        if (sePuede) {
+            for (int i = 0; i < eliminados.size(); i++) {
+                Pila pila_eliminar = (Pila) inventario.at(i);
+                for (int j = 0; j < pila_eliminar.getSize(); j++) {
+                    pila_eliminar.pop();
+                }
+                
+            }
 
-        Barra6.start();
+            Empleados empleado_temp = (Empleados) empleados.Peek();
+            jLabel37.setText(empleado_temp.getNombre());
 
-        empleados.DeQueue();
-        empleados_en_ordenes.Queue(empleado_temp);
+            Barra6.start();
 
-        jButton15.setEnabled(false);
+            empleados.DeQueue();
+            empleados_en_ordenes.Queue(empleado_temp);
+
+            jButton15.setEnabled(false);
+        }else{
+            JOptionPane.showMessageDialog(this, "No hay suficientes materiales");
+        }
     }//GEN-LAST:event_jButton15MouseClicked
 
     /**
