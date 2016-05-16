@@ -518,6 +518,11 @@ public class DTrump extends javax.swing.JFrame {
         jScrollPane4.setViewportView(t_materiales_productos);
 
         crear_producto.setText("Crear");
+        crear_producto.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                crear_productoMouseMoved(evt);
+            }
+        });
         crear_producto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 crear_productoMouseClicked(evt);
@@ -535,6 +540,7 @@ public class DTrump extends javax.swing.JFrame {
         });
 
         jButton9.setText("Guardar");
+        jButton9.setEnabled(false);
         jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton9MouseClicked(evt);
@@ -1237,6 +1243,7 @@ public class DTrump extends javax.swing.JFrame {
             productos.push_back(new Productos(nombre, descripcion, tiempo));
             crear_producto.setEnabled(false);
             añadir_material.setEnabled(true);
+            jButton9.setEnabled(true);
         }
     }//GEN-LAST:event_crear_productoMouseClicked
 
@@ -1338,22 +1345,28 @@ public class DTrump extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Tienes que crear primero el producto");
         }
+        
 
     }//GEN-LAST:event_añadir_materialMouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-        if (catalogo.size() > 0) {
-            nombre_producto.setText("");
-            descripcion_producto.setText("");
-            tiempo_producto.setText("");
-            cb_productos_ordenes.addItem(productos.at(productos.size() - 1));
-            cb_productos.addItem(productos.at(productos.size() - 1));
-            nombre_producto.setText("");
-            descripcion_producto.setText("");
-            tiempo_producto.setText("");
-            crear_producto.setEnabled(true);
-        } else {
-            JOptionPane.showMessageDialog(this, "No has agregado Materiales al producto");
+        if (jButton9.isEnabled()) {
+            if (catalogo.size() > 0) {
+                nombre_producto.setText("");
+                descripcion_producto.setText("");
+                tiempo_producto.setText("");
+                cb_productos_ordenes.addItem(productos.at(productos.size() - 1));
+                cb_productos.addItem(productos.at(productos.size() - 1));
+                nombre_producto.setText("");
+                descripcion_producto.setText("");
+                tiempo_producto.setText("");
+                crear_producto.setEnabled(true);
+                jButton9.setEnabled(false);
+                añadir_material.setEnabled(false);
+            } else {
+                JOptionPane.showMessageDialog(this, "No has agregado Materiales al producto");
+            }
+            
         }
     }//GEN-LAST:event_jButton9MouseClicked
 
@@ -1454,7 +1467,7 @@ public class DTrump extends javax.swing.JFrame {
             empleados_en_ordenes.Queue(empleado_temp);
 
             jButton12.setEnabled(false);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "No hay suficientes Materiales");
         }
     }//GEN-LAST:event_jButton12MouseClicked
@@ -1584,7 +1597,7 @@ public class DTrump extends javax.swing.JFrame {
                 for (int j = 0; j < pila_eliminar.getSize(); j++) {
                     pila_eliminar.pop();
                 }
-                
+
             }
 
             Empleados empleado_temp = (Empleados) empleados.Peek();
@@ -1596,10 +1609,20 @@ public class DTrump extends javax.swing.JFrame {
             empleados_en_ordenes.Queue(empleado_temp);
 
             jButton15.setEnabled(false);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "No hay suficientes materiales");
         }
     }//GEN-LAST:event_jButton15MouseClicked
+
+    private void crear_productoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crear_productoMouseMoved
+        if ((nombre_producto.getText()).equals("") || (descripcion_producto.getText()).equals("")
+                || (tiempo_producto.getText()).equals("") ) {
+
+            crear_producto.setEnabled(false);
+        } else {
+            crear_producto.setEnabled(true);
+        }
+    }//GEN-LAST:event_crear_productoMouseMoved
 
     /**
      * @param args the command line arguments
