@@ -770,7 +770,7 @@ public class DTrump extends javax.swing.JFrame {
             serie_material.setText("");
             boolean repetido = false;
             for (int i = 0; i < catalogo.size(); i++) {
-                if ((((Materiales) catalogo.at(i)).nombre).equals(nombre) && (((Materiales) catalogo.at(i)).marca).equals(marca)) {
+                if ((((Materiales) catalogo.at(i)).nombre).equals(nombre) && (((Materiales) catalogo.at(i)).marca).equals(marca) || ((((Materiales) catalogo.at(i)).ID) == id)) {
                     repetido = true;
                 }
             }
